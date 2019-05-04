@@ -1,0 +1,9 @@
+[default]
+site=https://localhost/web/blog
+user=name
+passwd=xxxxx
+
+[markdown]
+tabsize=4
+
+
