@@ -1,15 +1,12 @@
-"=========== Meta ============
-"StrID : 2006
-"Title : 基础优化-最不坏的哈希表
-"Slug  : 
-"Cats  : 编程技术
-"Tags  : 算法
-"=============================
-"EditType   : post
-"EditFormat : Markdown
-"TextAttach : 
-"========== Content ==========
-
+---
+uuid: 2006
+title: 基础优化-最不坏的哈希表
+status: publish
+categories: 编程技术
+tags: 算法
+date: 2017-12-08 19:14
+slug: 
+---
 哈希表性能优化的方法有很多，比如：
 
 - 使用双 hash 检索冲突
@@ -44,11 +41,11 @@ index_pos = hash(key) % index_size;
 
 今天我们就来实现一下最后一种，也是最彻底的做法：封闭寻址+平衡二叉树，看看最终性能如何？能否达到我们的要求？实现起来有哪些坑？其原理简单说起来就是，将原来封闭寻址的链表，改为平衡二叉树：
 
-![](http://skywind3000.github.io/word/images/avl/avl_hash_1.jpg)
+![](https://skywind3000.github.io/images/blog/2017/avl/avl_hash_1.jpg)
 
 传统的封闭寻址哈希表，也是 Linux / STL 等大部分哈希表的实现，碰到碰撞时链表一长就挂掉，所谓哈希表+平衡二叉树就是：
 
-![](http://skywind3000.github.io/word/images/avl/avl_hash_2.jpg)
+![](https://skywind3000.github.io/images/blog/2017/avl/avl_hash_2.jpg)
 
 将原来的链表（有序或者无序）换成平衡二叉树，这是复杂度最高的做法，同时也是最可靠的做法。发生碰撞时能将时间复杂度由 O(N) 降低到 O(logN)，10个节点，链表的复杂度就是 10，而使用平衡二叉树的复杂度是 3；100个节点前者的时间是100，后者只有6.6 越往后差距约明显。
 
@@ -138,7 +135,7 @@ node = (key < node->key)? node->left : node->right;
 
 引入一个新技术再大部分情况下如果比老技术更慢就别玩了，不能光说不练嘛，我们测试一下上面说的这些方法最终效果如何。首先看看正常情况下，即 hash 值均匀分布的情况下它的表现，对比的是几个主流编译器自带的 STL 里的 unordered_map，为了避免额外因素干扰，两边都用 int 值做主键，使用了相同的哈希函数：hash(x) = x，这也是大部分 STL 实现默认的 hash函数：
 
-![](http://skywind3000.github.io/word/images/avl/final_compare2.png)
+![](https://skywind3000.github.io/images/blog/2017/avl/final_compare2.png)
 
 
 上面的 avl-hash 是我们上面实现的树表混合结构，二叉平衡树我用的是 AVL，这是个人习惯问题了，关于 avl / rbtree 的性能其实是差不多的，我以前讨论过，这里不展开了：
@@ -157,16 +154,16 @@ node = (key < node->key)? node->left : node->right;
 
 激动人心的时刻终于到了，第一项，搜索测试：
 
-![](http://skywind3000.github.io/word/images/avl/avlmap-search.png)
+![](https://skywind3000.github.io/images/blog/2017/avl/avlmap-search.png)
 
 
 可以看出搜索对比，横轴表示冲突节点数量，纵轴表示测试耗时，可以看出随着碰撞的增加，树表混合结构的查询时间基本只是从 0毫秒增加到了 1-2毫秒，而 unordered_map 的搜索时间却是抛物线上升到1.4秒了。
 
-![](http://skywind3000.github.io/word/images/avl/avlmap-insert.png)
+![](https://skywind3000.github.io/images/blog/2017/avl/avlmap-insert.png)
 
 插入和删除耗时类似
 
-![](http://skywind3000.github.io/word/images/avl/avlmap-delete.png)
+![](https://skywind3000.github.io/images/blog/2017/avl/avlmap-delete.png)
 
 
 删除操作都比较费时，unordered_map 在三万个节点时基本接近1.6秒，而我们的树表混合结构耗时只有少许增加。

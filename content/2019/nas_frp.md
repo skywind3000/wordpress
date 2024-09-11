@@ -53,7 +53,7 @@ GatewayPorts yes
 
 Frp 结构很简单，分为 frps/frpc 两个可执行程序，在有公网地址的 VPS 上运行 frps 然后在家中内网运行 frpc 就行：
 
-![](http://skywind3000.github.io/word/images/2019/nas_frp.png)
+![](https://skywind3000.github.io/images/blog/2019/nas_frp.png)
 
 比如想把家中服务器的 ssh 端口 22 代理代理到外网 vps 202.115.8.1:221 上，那么在 vps 上编辑 frps.ini 配置文件：
 
@@ -174,7 +174,7 @@ https://gitlab.skywind.com
 
 如果你的 frpc.ini 中 http/https 服务你用的 type=tcp，那每个服务都会占用一个外网 vps 的端口，而把 type 设置成 http/https 的话，只要你有几个二级域名，就能共用 frps 的端口：
 
-![](http://skywind3000.github.io/word/images/2019/nas_frp_2.jpg)
+![](https://skywind3000.github.io/images/blog/2019/nas_frp_2.jpg)
 
 上图时我在公司通过外网 frps 跳板，访问家中 GitBucket 代码服务的截图。通过 type = https，你可以把家中的：文件服务，照片服务，代码服务，笔记服务 等一些列常用的服务全部代理到外网 VPS 的 443 端口上来，然后用域名进行区分。
 
