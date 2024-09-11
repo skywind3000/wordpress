@@ -3,7 +3,7 @@ uuid: 2308
 title: kNN 的花式用法
 status: publish
 Categories: 人工智能
-tags: AI
+tags: 算法,AI
 ---
 **kNN** （**k-nearest neighbors**）作为一个入门级模型，因为既简单又可靠，对非线性问题支持良好，虽然需要保存所有样本，但是仍然活跃在各个领域中，并提供比较稳健的识别结果。
 
@@ -15,7 +15,7 @@ tags: AI
 
 避免有人不知道，还是简单回顾下 kNN 用于分类的基本思想。
 
-![](http://skywind3000.github.io/word/images/knn/knn-1.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-1.png)
 
 针对测试样本 Xu，想要知道它属于哪个分类，就先 for 循环所有**训练样本**找出离 Xu 最近的 K 个邻居（k=5），然后判断这 K个邻居中，大多数属于哪个类别，就将该类别作为测试样本的预测结果，如上图有4个邻居是圆形，1是方形，那么判断 Xu 的类别为 “圆形”。
 
@@ -27,7 +27,7 @@ tags: AI
 
 你有一系列样本坐标（xi, yi），然后给定一个测试点坐标 x，求回归曲线上对应的 y 值。用 kNN 的话，最简单的做法就是取 k 个离 x 最近的样本坐标，然后对他们的 y 值求平均：
 
-![](http://skywind3000.github.io/word/images/knn/knn-2.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-2.png)
 
 绿色是拟合出来的曲线，用的是 sklearn 里面的 KNeighborsRegressor，可以看得出对非线性回归问题处理的很好，但是还可以再优化一下，k 个邻居中，根据他们离测试点坐标 x 的距离 d 的倒数 1/d 进行加权处理：
 
@@ -38,7 +38,7 @@ y = sum([ (w[i] * y[i]) for i in range(k) ]) / sum(w)
 
 如果 x 刚好和某样本重合，di = 0 的话，1/d 就正无穷了，那么接取该样本的 y 值，不考虑其他点（sklearn的做法），这样得到的 Y 值就相对比较靠谱了：
 
-![](http://skywind3000.github.io/word/images/knn/knn-3.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-3.png)
 
 这样误差就小多了，前面不考虑距离y值平均的方法在 sklearn 中称为 uniform，后一种用距离做权重的称为 distance。
 
@@ -60,7 +60,7 @@ One-class 分类/识别又称为：异常点/离群点检测，这个非常有�
 
 这时候 One-class 识别器一直扮演着举足轻重的作用，我们将 0-9 的所有样本作为“正样本”输入，测试的时候检测检测测试值是否也属于同类别，或者属于非法的负类别。kNN 来做这件事情是非常容易的，我们用 NN-d 的本地密度估计方法：
 
-![](http://skywind3000.github.io/word/images/knn/knn-4.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-4.png)
 
 方法是对待测试样本 z ，现在训练样本中找到一个离他最近的邻居 B，计算 z 到 b 点的距离为 d1，然后再在训练样本中找到一个离 B 最近的点 C，计算 BC 距离为 d2，如果：
 
@@ -83,11 +83,11 @@ LIBSVM 里的三大用法：分类，回归，`ONE_CLASS`（离群点检测）�
 
 kNN 中最关键的一步就是求距离 d(xi, xj)，这个距离有很多种求法，比如传统欧氏距离：
 
-![](http://skywind3000.github.io/word/images/knn/knn-10.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-10.png)
 
 或者曼哈顿距离：
 
-![](http://skywind3000.github.io/word/images/knn/knn-11.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-11.png)
 
 其实就是在距离函数上做文章，那么 kNN 引入核方法以后同样是在距离函数上做文章。
 
@@ -99,19 +99,19 @@ K(xi, xj) = φ(xi) . φ(xj)
 
 常用的核函数和 SVM 一样，有这么几个，比如常用的高斯核（RBF）：
 
-![](http://skywind3000.github.io/word/images/knn/knn-5.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-5.png)
 
 多项式核（POLY）：
 
-![](http://skywind3000.github.io/word/images/knn/knn-6.jpg)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-6.jpg)
 
 以及线性核（相当于传统欧式坐标系下点乘）：
 
-![](http://skywind3000.github.io/word/images/knn/knn-8.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-8.png)
 
 那么高维空间里两个点的距离，核化以后距离的平方可以表达为：
 
-![](http://skywind3000.github.io/word/images/knn/knn-9.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-9.png)
 
 具体距离，就上上面公式的平方根。经过一次变换后，我们把 φ(xi) 和 φ(xj) 消除掉了，完全用关于 xi, xj 的核函数来表达距离，并不需要直接将 xi，xj 变换到高维空间才求距离，而是直接用核函数计算出来。
 
@@ -119,11 +119,11 @@ K(xi, xj) = φ(xi) . φ(xj)
 
 Kai Yu 在 《[Kernel Nearest-Neighbor Algorithm](https://link.zhihu.com/?target=https%3A//link.springer.com/article/10.1023/A%3A1015244902967)》中论证过基于核方法的 kNN 分类器比传统 kNN 分类器表现的更好，因为仅仅是距离测量方式改变了一下，所以总体时间和传统 kNN 分类器仍然类似，但是效果好了很多：
 
-![](http://skywind3000.github.io/word/images/knn/knn-12.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-12.png)
 
 在不同的数据集上，核化 kNN 都能比传统 kNN 表现的更精确和稳定，他们使用 US Postal Service 数据和 BUPA Live Disorder 数据进行了验证，结果表明核化过的 kNN 分类器精度明显好于传统的 kNN，和 SVM 有得一拼：
 
-![](http://skywind3000.github.io/word/images/knn/knn-13.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-13.png)
 
 同样，Shehroz Khan 等人在《Kernels for One-Class Nearest Neighbour Classification》验证了核化 kNN 在 One-Class 分类问题上取得了比 SVM One-class 更优秀的识别能力，在数个数据集上达到了 87% - 95% 的准确率。
 
@@ -132,7 +132,7 @@ Kai Yu 在 《[Kernel Nearest-Neighbor Algorithm](https://link.zhihu.com/?target
 
 针对大规模样本时 kNN 性能不高的问题，大家引入了很多空间分割技术，比如 kdtree：
 
-![](http://skywind3000.github.io/word/images/knn/knn-14.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-14.png)
 
 就是一种空间二分数据结构，构建很简单，选择一个切割坐标轴（所有样本再该坐标轴上方差最大）并将样本按该坐标轴的值排序，从中位切割成左右两个部分，然后继续递归切割，直到当前节点只有一个样本为止。
 
@@ -152,7 +152,7 @@ kdtree 网上有很多文章和代码，篇幅问题不打算细说，只想强�
 
 其实就是 sklearn 里面的 ball-tree，也是一种空间二分法，但是它不依赖坐标轴，只需要求解两个样本之间的距离就能构造出来，这天生适合引入核技巧：
 
-![](http://skywind3000.github.io/word/images/knn/knn-16.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-16.png)
 
 先从把所有样本放到一个超球体里开始，找到一个样本当球心 x0，使得所有其他样本到它的最大距离最短。然后找到一个离 x0 最远的点 x1，再找到离 x1 最远的点为 x2，然后把球体内所有样本分按照离 x1 最近分配给 x1，离 x2 最近就分配到 x2，然后构建两个子球体，再用上面的方法重新调整球心，然后递归下去，直到只包含一个样本，就不再切割，类似 kdtree。
 
@@ -168,13 +168,13 @@ Kai Yu 等人用邮政数据进行过测试，当样本数量增加，不规律�
 
 kNN 性能提升还可以通过在尽量不影响分类结果的情况下剔除冗余样本来提升性能，比如经典的 Condensed Nearest Neighbours Data Reduction 算法：
 
-![](http://skywind3000.github.io/word/images/knn/knn-17.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-17.png)
 
 简单的讲就是先将样本点删除，然后用其他样本判断这个点，如果判断结果正确，则认为是一个冗余点，可以删除，如果不正确就要保留。
 
 经过 reduction 过后的样本数据和原来的不一样，求解结果是一个近似解，只要误差可控，可以极大的提高 kNN 的搜索性能，效果如下：
 
-![](http://skywind3000.github.io/word/images/knn/knn-18.png)
+![](https://skywind3000.github.io/images/blog/2019/knn/knn-18.png)
 
 由圈圈变成点的是被剔除的样本，从左到右可以看出基本上是边缘部分的有限几个样本被保留下来了，结果非常诱人。
 
@@ -195,6 +195,6 @@ kNN 因为实现简单，误差可控（有证明），能处理非线性问题�
 
 推荐阅读：
 
-[如何学习SVM（支持向量机）以及改进实现SVM算法程序？](http://www.skywind.me/blog/archives/2250)
+[如何学习SVM（支持向量机）以及改进实现SVM算法程序？](/blog/archives/2250)
 
 
