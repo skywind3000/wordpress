@@ -12,7 +12,7 @@ tags: 命令行
 
 并不是传统基于正则表达式的色彩高亮，而是真的会判断你输入的是啥的色彩高亮：
 
-![](http://skywind3000.github.io/word/images/linux/zsh-1.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/zsh-1.png)
 
 
 白色代表普通命令或者程序，红色代表错误命令，这个很管用，你再一个个字母的敲命令，前面都是红色的，如果敲对了最后一个字母的话，你会看到整条命令连着前面的都变成了白色，代表你敲对了。以前无高亮的时候敲错了都不知道，还要往上翻着左右检查。下面青色的代表内建命令或者 alias （echo 和 ls ），这些都不是正则判断出来的，是真的去检查的。
@@ -25,22 +25,22 @@ tags: 命令行
 
 注意，命令提示和补全是两个完全不同的系统，很多时候提示比补全更有用：
 
-![](http://skywind3000.github.io/word/images/linux/zsh-2.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/zsh-2.png)
 
 
 你才输入完 “tar”命令，后面就用灰色给你提示 tar 命令的参数，而且是随着你动态输入完每一个字母不断修正变化：
 
-![](http://skywind3000.github.io/word/images/linux/zsh-3.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/zsh-3.png)
 
 比如你输入到 - 后，没有跟着它上面的提示，而是输入了一个c字母，它马上明白你是要压缩，不是解压，然后随即给出你压缩对应的命令提示。
 
 这个命令提示是基于你的历史命令数据库进行分析的，随着你输入的命令越来越多，提示将会越来越准确和顺手，某些不常输入的命令特别管用，比如偶尔查看下网卡配置：
 
-![](http://skywind3000.github.io/word/images/linux/zsh-4.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/zsh-4.png)
 
 刚输入完：cat /etc/n 它后面已经猜出你可能要查看网卡配置了，然后马上给出你提示，用不着你 tab 补全半天，你才敲 gc ，它就猜测出你可能想运行 gcc，然后马上给出完整建议：
 
-![](http://skywind3000.github.io/word/images/linux/zsh-5.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/zsh-5.png)
 
 <!--more-->
 
@@ -53,7 +53,7 @@ tags: 命令行
 
 传统 shell 的补全在 zsh 面前基本都可以下班了：
 
-![](http://skywind3000.github.io/word/images/linux/c-1.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/c-1.png)
 
 
 即便可以在终端下舒适工作的人，面对有些任务也会觉得烦躁，比如频繁的切换路径，这种缩写路径补全是我用 zsh 的一大痛点之一，特别是路径比较长的时候，比如 OS X 下工具链层层套的那种路径，比如某 java 代码树，有了这种缩写补全，能让你切换路径流畅不少。
@@ -61,7 +61,7 @@ tags: 命令行
 当补全内容较多时，不用像 bash 一样持续提示你需要继续输入，也不会像 cmd 永无止境的循环下去，连续敲击两次 TAB 键 zsh 给你一个补全目录，让你上下左右选择：
 
 
-![](http://skywind3000.github.io/word/images/linux/c-2.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/c-2.png)
 
 
 这叫选择模式，由两次连续 TAB 进入，进入后，除了 tab/shift+tab 可以前后切换外，你还可以使用光标键上下左右移动，或者使用 emacs 键位：ctrl + f/b/p/n (左右上下：forward, backward, previous, next) 。如果你觉得光标键太远难按，CTRL+f/b/p/n 太伤小拇指，可以跟我一样新定义出一套：ALT+hjkl （左下上右）来选择，十分顺手。回车表示确认选择，用 CTRL+G 表示退出。
@@ -69,12 +69,12 @@ tags: 命令行
 命令参数补全更不在话下，输入 svn 后面按 TAB：
 
 
-![](http://skywind3000.github.io/word/images/linux/c-4.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/c-4.png)
 
 就出现了 svn 的参数，这种一级参数补全基本只会对很少用的命令才有效果，svn/git 这种一级参数基本都不需要补全的，我们一般会需要到二级参数补全，比如已经输入了 svn commit，但是有一个 commit 的参数我忘记了，我只记得两个减号开头的，于是：
 
 
-![](http://skywind3000.github.io/word/images/linux/c-3.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/c-3.png)
 
 这时候两次 TAB 进入选择模式就比较管用了，svn 的二级参数往往很长，选择模式比如信任 server 那个，选择完回车确认，或者 CTRL+G 退出选择模式。
 
@@ -87,7 +87,7 @@ zsh的补全真的太强了，我这里只说了十分之一不到，没法一�
 前面也说过命令行工作中，不同的路径间切来切去是个头疼的问题，除了上面提到的缩写补全外，有无更快的办法让我马上切换到我最近跳转过的某个路径？当然有“cd -”命令：
 
 
-![](http://skywind3000.github.io/word/images/linux/cd-1.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/cd-1.png)
 
 
 输入 cd 后面加一个减号后，按一次 tab 马上就列出本次登陆后去过的最近几次路径，接着根据下面的提示输入数字按回车就过去了，比如输入：
@@ -105,17 +105,17 @@ $ cd -5 <回车>
 有了前面的路径缩写展开，和这里的最近访问路径切换，你已经没法再回到过去那种按部就班输入路径外加点弱智补全的方式了，但是可能你还会问，能否更进一步，不限于本次登陆或者最近去过的几级路径，有没有办法让我快速进入自我开始用 zsh 之后进入过的某个路径呢？当然可以，我们用 z 命令，查看历史上进入过的目录：
 
 
-![](http://skywind3000.github.io/word/images/linux/z-1.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/z-1.png)
 
 
 敲入 z 命令，列出了自从我开始用zsh进入过的目录和他们的权重，进入次数越多，权重越大，便于演示，我删除了我的历史，随便 cd 了一下，保持列表的简洁。z 后面加一个关键词就能跳转到所有匹配的历史路径中权重最高的那个了：
 
-![](http://skywind3000.github.io/word/images/linux/z-3.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/z-3.png)
 
 
 比如所有历史路径都包含 o ，那么 z o 就会跳转到权重最高的 ~/software 目录中。使用：“z -l foo" 可以列出包含 foo 的所有历史路径：
 
-![](http://skywind3000.github.io/word/images/linux/z-4.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/z-4.png)
 
 
 比如我们查询包含关键字为 c 的所有历史路径和他们的权重，有时你搞不清楚权重，可能会跳转错了，比如有两个路径：

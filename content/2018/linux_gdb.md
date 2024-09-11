@@ -1,27 +1,20 @@
-"=========== Meta ============
-"StrID : 2036
-"Title : GDB 从裸奔到穿戴整齐
-"Slug  : 
-"Cats  : 随笔
-"Tags  : Linux
-"=============================
-"EditType   : post
-"EditFormat : Markdown
-"TextAttach : vimpress_5a966eda_mkd.txt
-"========== Content ==========
-
+---
+uuid: 2036
+title: GDB 从裸奔到穿戴整齐
+status: publish
+Categories: 随笔
+tags: Linux
+---
 无数次被问道：你在终端下怎么调试更高效？或者怎么在 Vim 里调试？好吧，今天统一回答下，我从来不在 vim 里调试，因为它还不成熟。那除了命令行 GDB 裸奔以外，终端下还有没有更高效的方法？能够让我事半功倍？
 
 当然有，选择恰当的工具和方法，让 GDB 调试效率成倍的提升并没有任何问题。当然，前提条件是你至少会在使用最原始的 GDB。
-
 
 
 ### 裸奔状态：原始的 GDB 命令行
 
 穿上各种衣服前，至少得先学会裸奔，找份简单的 GDB cheat sheet 对照一下：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-1.PNG)
-
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-1.PNG)
 
 生产环境中出现崩溃时，因线上服务器一般没有开发环境，也无配套源代码，所以程序崩溃后，如果你懒得把 core 文件拖回到开发机检查，可以先在线上服务器先简单gdb看一下。
 
@@ -43,12 +36,12 @@ gdb -tui hello
 
 即可打开我们的文本界面：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-2.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-2.png)
 
 
 上方是源代码窗口，下面是 gdb 终端，窗口管理快捷键模仿 emacs，使用 c-x o 进行窗口切换，如果你还想查看指令窗口，可以输入：layout split
 
-![](http://skywind3000.github.io/word/images/linux/gdb-3.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-3.png)
 
 然后你单步的时候上面的源代码窗口会跟着滚动，比之前不停的 list 方便不少吧，要看前后源代码可以继续 c-x o 切换窗口后上下滚动。
 
@@ -62,7 +55,7 @@ gdb -tui hello
 
 如果上述文本 TUI的信息不够丰富的话，也许你会对 .gdbinit 感兴趣，~/.gdbinit 是一个 gdb配置脚本，可以设定一些由 python 编写的插件，比如 peda：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-4.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-4.png)
 
 在 ~/.gdbinit 上面配置了 peda 后，可以看到命令提示符就从 (gdb) 变成了 gdb-peda$ 。每敲一个单步命令，peda 都会显示出无比丰富的信息，你还可以配置添加更多，配合高亮，你可以得到一个加强版的命令行。
 
@@ -78,7 +71,7 @@ CGDB 类似 gdb tui 分为终端窗口和代码窗口：
 
 <!--more-->
 
-![](http://skywind3000.github.io/word/images/linux/gdb-5.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-5.png)
 
 
 上面的代码窗口称为 cgdb mode, 下面的 gdb 窗口称为 gdb mode，调试就是不停的在两种模式间切换，按键模仿 vim，按 ESC 切换回 cgdb 模式，按 i 切换到 gdb 模式。
@@ -110,7 +103,7 @@ map <F9> :until<cr>
 
 这里大概设置了搜索大小写不敏感，tab 大小，分屏方式（默认改为左右分屏），搜索高亮，以及加了一个 F9 的快捷键，用于跳出循环（默认没有这个快捷键）：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-6.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-6.png)
 
 
 现在大家都是宽屏显示器了，默认改成左右分屏（要 cgdb 7.0才支持）舒服不少。
@@ -137,16 +130,16 @@ CGDB 虽然大部分操作可以用快捷键进行，但是仍然有不少时候
 
 当然，别忘记退出命令是 c-x c-c，这就够了，首先我们启动 emacs：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-7.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-7.png)
 
 按下 m-x （alt+x），提示输入命令（如果终端软件 alt 键不灵，那可以设置一下终端软件，或者一秒内先按 ESC，再按 x键，在 xterm 终端下是等价的），键入 “gdb”敲回车：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-8.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-8.png)
 
 
 下面会问你怎么运行gdb，输入gdb的 shell 启动命令行回车后开始 gdb 模式：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-9.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-9.png)
 
 
 看到这里也许你会问，这和直接命令行 gdb 有区别么？别急，继续 m-x 输入命令：
@@ -157,14 +150,14 @@ gdb-many-windows
 
 马上满足你：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-10.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-10.png)
 
 
 左上是 GDB 终端，从上到下分别是：GDB终端，本地变量监控，源代码，程序输出，栈帧，断点列表。
 
 当然你可以接着在 gdb 终端里输入你想要的指令，但大部分时候我们会在源代码窗口工作，使用 c-x o 将窗口定位到源代码窗口，使用下面命令或者对应快捷键进行操作：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-11.PNG)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-11.PNG)
 
 这些 gud- 开头的命令都是 emacs gdb-mode 下通用调试器的操作命令，他们和 gdb 命令一一对应，可以用 m-x 输入这些命令，还可以直接用快捷键操作。
 
@@ -176,12 +169,12 @@ gdb-display-disassembly-buffer
 
 那么其中一个窗口就会被切换成反汇编窗口：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-12.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-12.png)
 
 
 左上角的 gdb 终端被切换成反汇编窗口了，看完后记得 c-x b 切换回 gdb 控制台，如果你要避免某个窗口被切换走可以搜索 emacs 的 dedicated window。再者，我们可以自己用窗口管理快捷键按照我们的喜好拆分布局：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-13.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-13.png)
 
 
 比如重新拆分了一下，把 gdb 终端挪到右边，输出窗口下面，把原来显示 gdb 终端的地方显示为反汇编。基本上你在 IDE 上见得到的调试手段，在 emacs 中都可以操作，并且 emacs 还可以在 Windows 下用 gdb 调试 mingw 的程序。
@@ -255,7 +248,7 @@ gdb-display-disassembly-buffer
 
 这下 xterm 下你可以自用的用鼠标点击切换窗口，点击按钮，用滚轮上下查看源代码了：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-14.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-14.png)
 
 
 这下自由多了，ALT+方向或者鼠标点击，直接窗口跳转，并且用下面的命令操作：
@@ -270,7 +263,7 @@ gdb-display-disassembly-buffer
 
 终于比我们最初的版本好用多了，如果你喜欢折腾的话，你还可以定制 gdb-many-windows 的初始格局，比如更复杂的：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-layout.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-layout.png)
 
 
 彻底满足你各种复杂的调试需求，这里不展开了，有兴趣见【[这篇文章](http://link.zhihu.com/?target=http%3A//blog.csdn.net/shyanyang/article/details/37349135)】。
@@ -298,7 +291,7 @@ $ gdbtool hello
 
 其实到 emacs 已经差不多了，但如果你实在记不住这有限的几个快捷键或者 gdb 命令，那么还可以尝试一下 gdbgui：
 
-![](http://skywind3000.github.io/word/images/linux/gdbgui.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdbgui.png)
 
 python 开发的基于浏览器的 GDB 前端，pip 安装一下即可，使用时：
 
@@ -310,15 +303,15 @@ gdbgui --host 0.0.0.0 hello
 
 中间是程序代码，下面是 GDB终端，上面可以切换源代码，可以控制运行/继续/单步等。右边可以实时查看：本地变量，调用栈帧，内存地址，断点，线程 等等。
 
-![](http://skywind3000.github.io/word/images/linux/gdb-gui-2.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-gui-2.png)
 
 比如上面的调用栈和线程查看，以及下面的自定义结构体查询：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-gui-3.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-gui-3.png)
 
 还能可视化查询数据结构：
 
-![](http://skywind3000.github.io/word/images/linux/gdb-gui-4.png)
+![](https://skywind3000.github.io/images/blog/2018/linux/gdb-gui-4.png)
 
 
 鼠标点击代码左边就可以设置/删除断点，点击上面的按钮就能切换显示汇编代码。基本上把 GDB的主要功能都用可视化的方式，现代的网页界面展示在你的面前，不需要记住任何快捷键，鼠标点点点就可以了。
