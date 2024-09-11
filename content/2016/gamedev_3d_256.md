@@ -23,7 +23,7 @@ slug:
 
 基本的光线跟踪，在 320x200 的解析度下，从摄像机中心射出 320x200条光线，屏幕上每个点对应一条光线，首先碰撞到的物体的位置颜色，就是屏幕上这个点的颜色：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-1.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-1.jpg)
 
 可以描述为下面这段代码：
 
@@ -40,7 +40,7 @@ for (int y = 0; y < 200; y++) {
 
 所谓简化版的光线跟踪，是只需要实现特定物体，以及针对特定条件，比如早年游戏里面用的最多的实时光线跟踪绘制地形高度图的（比如三角洲特种部队，xxx直升飞机）：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-2.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-2.jpg)
 
 比如云风 2002年写过的文章：[3D地表生成及渲染 (VOXEL)](https://dev.gameres.com/Program/Visual/3D/Voxel.htm)
 实现上述效果的地形渲染，只需要 200多行 C 代码
@@ -55,15 +55,15 @@ for (int y = 0; y < 200; y++) {
 
 光线跟踪的流程可以针对这种情况大大简化：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-3.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-3.jpg)
 
 （高度图，白色表示高的地方，黑色表示矮的地方）
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-4.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-4.jpg)
 
 由于高度图的特殊性以及彩用水平视角，屏幕上同一列光线可以只算一条：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-5.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-5.jpg)
 
 没错，从屏幕最左边一列列的向右边绘制，每一列只需要先从最下方的光线寻找碰撞，找到碰撞以后，就逐步沿山体爬坡，计算出同一列其他光线的交点，这样的光线跟踪虽然效果看起来还行，最终代码写起来也就200行（C代码），用16位汇编紧凑点来写，256个字节未尝不可。
 
@@ -75,7 +75,7 @@ http://www.unitzeroone.com/flex_2/voxel_landscape/
 
 另一个著名的例子就是类《重返德军总部》，《DOOM》里面用到的光线追踪：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-7.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-7.jpg)
 
 这是 Javascript 实现的类 DOOM 引擎，只有 265行 js代码：
 
@@ -87,19 +87,19 @@ http://www.unitzeroone.com/flex_2/voxel_landscape/
 
 先画地面和天花板：也是从屏幕最下面投射一次性投射出一排光线出去，相交到地面（或天花板）上的某一行。
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-8.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-8.jpg)
 
 从屏幕最下面那一行像素开始，计算那一排光线投射后相交于地面上的线段（x1,y1）-（x2,y2），代表代表地面上相交线段左右两边的端点，然后根据屏幕宽度缩放着绘制过去。
 
 接着绘制墙壁，从坐到有右判断交点就是了，一竖条一竖条的绘制：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-9.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-9.jpg)
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-10.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-10.jpg)
 
 注意处理远小近大（除以z 来决定这一竖条墙壁的缩放比例）：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-11.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-11.jpg)
 
 早年不少地牢类 FPS游戏使用这个方法，实现起来也十分精简（javascript 才 265行）上面的几个例子，都是使用简化过的 raycasting 进行渲染：
 
@@ -110,14 +110,14 @@ http://www.unitzeroone.com/flex_2/voxel_landscape/
 
 来看第一个例子：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-12.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-12.jpg)
 
 明显的光线跟踪，只需要实现对一种特定的数学曲线/面的碰撞检测即可，颜色使用黄色，用交点的法向确定下明暗即可，效果十分平滑。
 然而，代码尺寸限制，它只能绘制这种数学曲线/面，并不能绘制其他形状的东西，所以并不能称为引擎。
 
 来看另一个例子：
 
-![](http://skywind3000.github.io/word/images/2016/3d-256-13.jpg)
+![](https://skywind3000.github.io/images/blog/2016/3d-256-13.jpg)
 
 这个墙面只有两种类型（横的或者竖的），由于性能可以不用考虑太多，
 可以比 doom的例子更简化一点，只对三种平面求焦点：

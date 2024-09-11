@@ -15,15 +15,15 @@ slug:
 
 - OwnCloud：老牌开源文件服务，支持移动端，网页版，Win/Mac/Ubuntu 桌面版：
 
-![](http://skywind3000.github.io/word/images/2018/cloud-1.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-1.jpg)
 
 - NextCloud：OwnCloud 核心团队出走后新做的项目，改了很多老bug，加了新特性：
 
-![](http://skywind3000.github.io/word/images/2018/cloud-2.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-2.jpg)
 
 我更喜欢 NextCloud，文件同步很方便，放视频或者照片上去会帮你自动做成缩略图，再 Web 上方便查看，移动版也可以在线播放上面的音视频，而不必下载本地。
 
-![](http://skywind3000.github.io/word/images/2018/cloud-3.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-3.jpg)
 
 上图是相册插件，集中管理网盘内所有图片，还有更多有意思的插件值得花时间好好探索。我做过个镜像，可以用下面的 Docker compose 配置文件一键安装：
 
@@ -58,15 +58,15 @@ nextcloud:
 
 - GitLab （自架版本）：功能最强的开源代码托管系统，支持 ci：
 
-![](http://skywind3000.github.io/word/images/2018/cloud-4.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-4.jpg)
 
 - GitBucket：轻量级的代码托管系统，仿照 BitBucket，比 GitLab 消耗更少资源：
 
-![](http://skywind3000.github.io/word/images/2018/cloud-5.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-5.jpg)
 
 - Gogs：国人开发的代码托管系统，比 GitBucket 更加轻量级：
 
-![](http://skywind3000.github.io/word/images/2018/cloud-6.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-6.jpg)
 
 GitLab 是 Ruby 写的，很费内存。个人和小团队使用推荐后两个，上规模了需要自动化部署和复杂的管理的话，可以用 GitLab。
 
@@ -95,21 +95,21 @@ Evernote 离线笔记要付费，到现在都不支持 Markdown，插入代码�
 
 开源云笔记有很多，最靠谱的一个莫过于 LeaNote：
 
-![](http://skywind3000.github.io/word/images/2018/cloud-7.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-7.jpg)
 
 基本满足 Evernote 里面的各种需求，此外还有不少 Evernote 没有的功能：
 
 - 插入代码支持语法高亮：这是 EverNote 里想要很久却没有的功能
 
-![](http://skywind3000.github.io/word/images/2018/cloud-8.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-8.jpg)
 
 - 支持 Markdown：完整支持 Github 的各种语法格式
 
-![](http://skywind3000.github.io/word/images/2018/cloud-9.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-9.jpg)
 
 - 篇笔记提供：只读模式（默认），编辑模式的切换，按 CTRL+E 切换
 
-![](http://skywind3000.github.io/word/images/2018/cloud-10.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-10.jpg)
 
 这是个很贴心的功能，EverNote 里笔记编辑好后，经常需要阅读，特别手机版，有时候 EverNote 手机版里用手指滚屏，滚着滚着就变成编辑模式了。
 
@@ -117,7 +117,7 @@ LeaNote 所有笔记点过去默认都是只读模式，方便浏览，要修改
 
 运行客户端后你可以选择登陆 LeaNote 官服，或者自建服：
 
-![](http://skywind3000.github.io/word/images/2018/cloud-11.jpg)
+![](https://skywind3000.github.io/images/blog/2018/cloud-11.jpg)
 
 跟 EverNote / 有道云笔记一样，LeaNote 写了笔记可以发布成一个 URL ，共享给别人。不会有任何人员可以拿着你的笔记翻来翻去，更不会因为笔记误含关键字被删除或标记。此外 LeaNote 里还支持各种插件，这些可以花时间慢慢发掘。
 

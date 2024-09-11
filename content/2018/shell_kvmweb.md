@@ -235,15 +235,15 @@ sudo ./manage.py runserver 0:8000
 
 用浏览器打开 http://your-ip:8000 并用刚才的用户登陆看看行不行，成功的话，会看到：
 
-![](http://skywind3000.github.io/word/images/2018/virt-1.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-1.jpg)
 
 然后点击右上角添加一个 connection，把 localhost 这个 libvirtd 的链接用 tcp 的方式添加进去，用户名和密码是刚才初始化的 libvirt 的管理员 admin 和密码：
 
-![](http://skywind3000.github.io/word/images/2018/virt-2.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-2.jpg)
 
 链接如果能够正常添加的话，表明可以正常运行了：
 
-![](http://skywind3000.github.io/word/images/2018/virt-3.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-3.jpg)
 
 
 然后 CTRL+C 退出。
@@ -349,7 +349,7 @@ sudo chown www-data:www-data /home/data/kvm/iso
 
 首先到左侧的 “存储池”添加用于保存虚拟机映像的路径：
 
-![](http://skywind3000.github.io/word/images/2018/virt-4.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-4.jpg)
 
 先点击 "New Storage" 添加一个类型为 “目录卷类型”的存储池，名字为 images，指向：
 
@@ -367,11 +367,11 @@ sudo chown www-data:www-data /home/data/kvm/iso
 
 还差网络配置就妥了，点击左边 “网络池”：
 
-![](http://skywind3000.github.io/word/images/2018/virt-5.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-5.jpg)
 
 原来只有一个 default 的 NAT 类型网络，那个 bridge 是我们需要点击 "New Network" 添加的桥接网络：
 
-![](http://skywind3000.github.io/word/images/2018/virt-6.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-6.jpg)
 
 上面这个桥接名称，就是我们前面配置的网桥名称 br0。我们启动的虚拟机一般都会希望和物理机同处于一个内网下，拥有可以直接访问的 IP，因此基本都用桥接模式。
 
@@ -379,41 +379,41 @@ sudo chown www-data:www-data /home/data/kvm/iso
 
 先创建磁盘映像，到左边的 “存储池”，然后选择 images 存储池：
 
-![](http://skywind3000.github.io/word/images/2018/virt-7.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-7.jpg)
 
 点击最下面的添加镜像，添加一个 20G 的 qcow2，名字为 test1：
 
-![](http://skywind3000.github.io/word/images/2018/virt-8.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-8.jpg)
 
 然后点击左边的 “虚机实例”，然后点击左上角的 “New Instance”：
 
-![](http://skywind3000.github.io/word/images/2018/virt-9.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-9.jpg)
 
 不要使用它那些乱七八糟的模板，直接点击正上方的 “Custom Instance”，创建虚拟机：
 
-![](http://skywind3000.github.io/word/images/2018/virt-10.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-10.jpg)
 
 在创建虚拟机的对话框里，点击“Add Image”添加刚才创建的 test1.img 镜像，然后再 "Add network" 添加类型为 bridge 的桥接网络，你如果想要所有虚拟机都处于一个虚拟内网的话，还可以再添加一块类型为 default 的网卡，就是默认的 NAT 类型。
 
 完成后点 “创建”，咱们的虚拟机就有了：
 
-![](http://skywind3000.github.io/word/images/2018/virt-11.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-11.jpg)
 
 这时候，可以到现前的 “存储池”的 iso 下面，上传两个操作系统的安装盘 iso 文件，然后回来这个 test1 虚拟机主页，选择设置，挂载 iso 文件：
 
-![](http://skywind3000.github.io/word/images/2018/virt-12.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-12.jpg)
 
 选择我们刚才上传的操作系统 ISO 文件，并点击右边的“链接”按钮，然后可以到“Power”那里使用 “启动”按钮开机了，此时虚拟机出于“开机”状态：
 
-![](http://skywind3000.github.io/word/images/2018/virt-13.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-13.jpg)
 
 然后选择 Access ：
 
-![](http://skywind3000.github.io/word/images/2018/virt-14.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-14.jpg)
 
 点击 “控制台”，打开虚拟机的 webvnc 终端，开始安装操作系统：
 
-![](http://skywind3000.github.io/word/images/2018/virt-15.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-15.jpg)
 
 网页版本的 Webvnc 图形性能一般，建议安装操作系统都用普通文本模式安装（可以选择的话），测试虚拟机可以正常启动以后，我们先把它强制结束了，进行一些必要设置。
 
@@ -422,27 +422,27 @@ sudo chown www-data:www-data /home/data/kvm/iso
 
 如果的服务器暴露再公网上，一定要到 Access -> Console Password 下面设置个密码：
 
-![](http://skywind3000.github.io/word/images/2018/virt-16.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-16.jpg)
 
 webvirtmgr 里点击控制台它会自动读取该密码，不需要你手工输入，但是这样就比没有密码安全很多了。
 
 然后启动后，你可以到：设置->XML 那里查看一下 VNC 被分配的端口号和设置过的密码：
 
-![](http://skywind3000.github.io/word/images/2018/virt-17.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-17.jpg)
 
 由于默认配置 VNC 都是使用 “自动端口”，这样更安全些，每次虚拟机启动，都会动态分配一个，再 XML 这里可以查看得到，这样你也可以不用 webvnc，而用自己的 VNC 客户端：
 
 比如 Windows 下的 vnc-viewer，填入 ip 地址和端口号，然后点 "connect"：
 
-![](http://skywind3000.github.io/word/images/2018/virt-18.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-18.jpg)
 
 提示输入密码，将上面 XML 里的密码复制粘贴过来即可：
 
-![](http://skywind3000.github.io/word/images/2018/virt-19.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-19.jpg)
 
 然后点击 OK 开始显示终端屏幕：
 
-![](http://skywind3000.github.io/word/images/2018/virt-20.jpg)
+![](https://skywind3000.github.io/images/blog/2018/virt-20.jpg)
 
 #### 共享文件夹
 

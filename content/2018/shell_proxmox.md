@@ -28,35 +28,35 @@ slug:
 
 不想折腾的话，最简单的做法是直接下载 ProxmoxVE 社区版的 ISO ，刻录到 U 盘里，按照安装普通操作系统一样的安装到物理机上，立马把你的物理机变成一台 Hypervisor：
 
-![](http://skywind3000.github.io/word/images/2018/proxmox-1.jpg)
+![](https://skywind3000.github.io/images/blog/2018/proxmox-1.jpg)
 
 Proxmox VE 安装后启动，你可以登陆进去，ProxmoxVE 基于 Debian 9 ，进去可以用 apt-get 进行版本升级。接着按提示打开网页：https://your-ip:8006/ 用系统 root 密码登陆：
 
-![](http://skywind3000.github.io/word/images/2018/proxmox-2.jpg)
+![](https://skywind3000.github.io/images/blog/2018/proxmox-2.jpg)
 
 ProxmoxVE 可以方便的管理各种硬件资源（计算，存储，网络）和虚拟机系统，你可以方便的新建一台虚拟机并进行硬件配置：
 
 <!--more-->
 
-![](http://skywind3000.github.io/word/images/2018/proxmox-3.jpg)
+![](https://skywind3000.github.io/images/blog/2018/proxmox-3.jpg)
 
 各项配置应有尽有：
 
-![](http://skywind3000.github.io/word/images/2018/proxmox-4.jpg)
+![](https://skywind3000.github.io/images/blog/2018/proxmox-4.jpg)
 
 配置好了以后启动虚拟机，选择“console”就可以使用 webvnc 终端安装操作系统了：
 
-![](http://skywind3000.github.io/word/images/2018/proxmox-5.jpg)
+![](https://skywind3000.github.io/images/blog/2018/proxmox-5.jpg)
 
 嫌终端太小看不过来的话，可点右上角的 Console 按钮，弹出一个终端独占窗口，全屏化安装：
 
-![](http://skywind3000.github.io/word/images/2018/proxmox-6.jpg)
+![](https://skywind3000.github.io/images/blog/2018/proxmox-6.jpg)
 
 ProxmoxVE 除了上面这些功能外，还能方便的对虚拟机进行：复制，快照，迁移。你如果有硬盘阵列，它还能使用 ZFS 帮你做软件 Raid，保证数据安全性，不需要学习复杂的 zfs 命令行，web上点点点就出来了。
 
 小到个人 Linux Box ，大到商用的虚拟化集群，Proxmox VE 都能帮你方便的管理起来，提供开箱即用的体验，全部都是基于开源免费方案。唯一的问题是 Proxmox VE 本身和 Sublime Text 一样属于付费软件，但是可以免费使用，只不过免费版每次登陆 web后台会弹出一个对话框：
 
-![](http://skywind3000.github.io/word/images/2018/proxmox-7.jpg)
+![](https://skywind3000.github.io/images/blog/2018/proxmox-7.jpg)
 
 提醒你要去注册而已，不过连这个烦人的对话框也是可以干掉的，登陆到物理机的系统里面，修改一下 pvemanagerlib.js 这个文件的判断条件就行：
 
