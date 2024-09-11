@@ -108,7 +108,7 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 
 该插件可以在后台运行 shell 命令，并且把结果输出到 quickfix 窗口：
 
-![](https://raw.githubusercontent.com/skywind3000/asyncrun.vim/master/doc/screenshot.gif)
+![](https://skywind3000.github.io/images/p/asyncrun/screenshot.gif)
 
 最简单的编译单个文件，和 sublime 的默认 build system 差不多，我们定义 F9 为编译单文件:
 
@@ -186,7 +186,7 @@ nnoremap <silent> <F8> :AsyncRun -cwd=<root> -mode=4 make run <cr>
 
 代码检查是个好东西，让你在编辑文字的同时就帮你把潜在错误标注出来，不用等到编译或者运行了才发现。我很奇怪 2018 年了，为啥网上还在到处介绍老旧的 [syntastic](https://github.com/vim-syntastic/syntastic)，但凡见到介绍这个插件的文章基本都可以不看了。老的 syntastic 基本没法用，不能实时检查，一保存文件就运行检查器并且等待半天，所以请用实时 linting 工具 [ALE](https://github.com/w0rp/ale)：
 
-![](http://skywind3000.github.io/word/images/vim/ale.png)
+![](https://skywind3000.github.io/images/blog/2018/vim/ale.png)
 
 大概长这个样子，随着你不断的编辑新代码，有语法错误的地方会实时帮你标注出来，侧边会标注本行有错，光标移动过去的时候下面会显示错误原因，而具体错误的符号下面会有红色波浪线提醒。Ale 支持多种语言的各种代码分析器，就 C/C++ 而言，就支持：gcc, clang, cppcheck 以及 clang-format 等，需要另行安装并放入 PATH下面，ALE能在你修改了文本后自动调用这些 linter 来分析最新代码，然后将各种 linter 的结果进行汇总并显示再界面上。
 
@@ -226,7 +226,7 @@ hi! SpellRare gui=undercurl guisp=magenta
 
 我之前用 syntastic 时就用了两天就彻底删除了，而开始用 ALE 后，一用上就停不下来，头两天我还一度觉得它就是个可有可无的点缀，但是第三天它帮我找出两个潜在的 bug 的时候，我开始觉得没白安装，比如：
 
-![](http://skywind3000.github.io/word/images/vim/ale2.png)
+![](https://skywind3000.github.io/images/blog/2018/vim/ale2.png)
 
 即便你使用各类 C/C++ IDE，也只能给实时你标注一些编译错误或者警告，而使用 ALE + cppcheck/gcc，连上面类似的潜在错误都能帮你自动找出来，并且当你光标移动过去时在最下面命令行提示你错误原因。
 
@@ -308,7 +308,7 @@ let g:ycm_semantic_triggers =  {
 
 不再建议使用 [tagbar](https://github.com/majutsushi/tagbar), 它会在你保存文件的时候以同步等待的方式运行 ctags （即便你没有打开 tagbar），导致vim操作变卡，特别是 windows下开了反病毒软件扫描的话，有时候保存文件卡5-6秒。2018年了，我们有更好的选择，比如使用国人开发的 [LeaderF](https://github.com/Yggdroot/LeaderF) 来显示函数列表：
 
-![](http://skywind3000.github.io/word/images/vim/LeaderfFunction.png)
+![](https://skywind3000.github.io/images/blog/2018/vim/LeaderfFunction.png)
 
 全异步显示文件函数列表，不用的时候不会占用你任何屏幕空间，将 ALT+P 绑定到 `:LeaderfFunction!` 这个命令上，按 ALT+P 就弹出当前文件的函数列表，然后可以进行模糊匹配搜索，除了上下键移动选择外，各种vim的跳转和搜索命令都可以始用，回车跳转然后关闭函数列表，除此之外按 i 进入模糊匹配，按TAB切换回列表选择。
 
@@ -340,7 +340,7 @@ let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
 这里定义了 CTRL+P 在当前项目目录打开文件搜索，CTRL+N 打开 MRU搜索，搜索你最近打开的文件，这两项是我用的最频繁的功能。接着 ALT+P 打开函数搜索，ALT+N 打开 Buffer 搜索：
 
-![](http://skywind3000.github.io/word/images/vim/LeaderF.png)
+![](https://skywind3000.github.io/images/blog/2018/vim/LeaderF.png)
 
 LeaderF 是目前匹配效率最高的，高过 CtrlP/Fzf 不少，敲更少的字母就能把文件找出来，同时搜索很迅速，使用 Python 后台线程进行搜索匹配，还有一个 C模块可以加速匹配性能，需要手工编译下。LeaderF在模糊匹配模式下按 TAB 可以切换到匹配结果窗口用光标或者 Vim 搜索命令进一步筛选，这是 CtrlP/Fzf 不具备的，更多方便的功能见它的官方文档。
 
@@ -357,7 +357,7 @@ LeaderF 是目前匹配效率最高的，高过 CtrlP/Fzf 不少，敲更少的�
 
 这个功能应人而异，有人觉得不需要，有人觉得管用。写 C/C++ 时函数忘了可以用上面的 YCM 补全，但很多时候是参数忘记了怎么办？YCM的参数提示很蛋疼，要打开个 Preview 窗口，实在是太影响我的视线了，我自己写过一些参数提醒功能，可以在最下面的命令行显示当前函数的参数，不过这是基于 tags 的，搭配前面的 gutentags，对其他语言很管用，但对 C/C++ 我们可以使用 [echodoc](https://github.com/Shougo/echodoc.vim) 插件：
 
-![](http://skywind3000.github.io/word/images/vim/echodoc.gif)
+![](https://skywind3000.github.io/images/blog/2018/vim/echodoc.gif)
 
 它可以无缝的和前面的 YCM 搭配，你用 YCM 时 tab 补全了一个函数名后，只要输入左括号，下面命令行就会里面显示出该函数的参数信息，唯一需要设置的是使用 `set noshowmode` 关闭模式提示，就是底部 ---INSERT--- 那个，我们一般都用 airline / lightline 之类的显示当前模式了，所以默认模式提示可以关闭，INSERT 模式下的命令行，完全留给 echodoc 显示参数使用。
 
