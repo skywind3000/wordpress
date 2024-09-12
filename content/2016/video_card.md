@@ -1,15 +1,10 @@
-"=========== Meta ============
-"StrID : 1774
-"Title : 计算机底层是如何访问显卡的？
-"Slug  : 
-"Cats  : 图形编程
-"Tags  : 图形,汇编
-"=============================
-"EditType   : post
-"EditFormat : Markdown
-"TextAttach : vimpress_5763d340_mkd.txt
-"========== Content ==========
-
+---
+uuid: 1774
+title: 计算机底层是如何访问显卡的？
+status: publish
+Categories: 图形编程
+tags: 图形,汇编
+---
 以前 DOS下做游戏，操作系统除了磁盘和文件管理外基本不管事情，所有游戏都是直接操作显卡和声卡的，用不了什么驱动。
 
 虽然没有驱动，但是硬件标准还是放在那里，VGA, SVGA, VESA, VESA2.0 之类的硬件标准，最起码，你只做320x200x256c的游戏，或者 ModeX 下 320x240x256c 的游戏的话，需要用到VGA和部分 SVGA标准，而要做真彩高彩，更高分辨率的游戏的话，就必须掌握 VESA的各项规范了。
@@ -92,7 +87,7 @@ int display_enter_graph(int mode)
 
 然后写两条进入图形模式的指令：
 
-![](http://skywind3000.github.io/word/images/vga1.jpg)
+![](https://skywind3000.github.io/images/blog/2016/vga1.jpg)
 
 图中用到的指令为：
 
@@ -104,7 +99,7 @@ int 20                ; DOS命令：退出程序
 
 输入空行后退出编辑模式，然后使用 'g' 命令运行刚才的这个小程序：
 
-![](http://skywind3000.github.io/word/images/vga2.jpg)
+![](https://skywind3000.github.io/images/blog/2016/vga2.jpg)
 
 可以看到，显示模式初始化成功了，现在你已经进入了 320x200x256c的显示模式，大量的 DOS游戏是使用这个模式开发出来的（仙剑奇侠传，轩辕剑1/2，C&C）。
 
@@ -114,19 +109,19 @@ int 20                ; DOS命令：退出程序
 
 出现下面的画面：
 
-![](http://skywind3000.github.io/word/images/vga3.jpg)
+![](https://skywind3000.github.io/images/blog/2016/vga3.jpg)
 
 用了e 命令，写入了一连串字节，值都是“4”，点击放大上面的窗口，可以看到左上角已经被我写了几个点了，默认调色板下颜色 “4” 是红色。
 
-![](http://skywind3000.github.io/word/images/vga4.jpg)
+![](https://skywind3000.github.io/images/blog/2016/vga4.jpg)
 
 接着在 A000:0300处（坐标第3行第128列）写入更多颜色，这次更明显些，注意上面中间：
 
-![](http://skywind3000.github.io/word/images/vga5.jpg)
+![](https://skywind3000.github.io/images/blog/2016/vga5.jpg)
 
 放大些：
 
-![](http://skywind3000.github.io/word/images/vga6.jpg)
+![](https://skywind3000.github.io/images/blog/2016/vga6.jpg)
 
 这次写入了更多颜色，而且是在第三行中间部分，没挨着dosbox的窗口边缘，看起来更清晰了，是吧？
 

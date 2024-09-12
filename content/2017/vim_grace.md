@@ -20,7 +20,7 @@ tags: vim
 
 于是我用 VimScript + 内嵌 Python 写了一个功能，按快捷键可以让 GVim 在透明/不透明两种状态间自由切换：
 
-![](http://skywind3000.github.io/word/images/vim-demo-2.png)
+![](https://skywind3000.github.io/images/blog/2017/vim-demo-2.png)
 
 
 就是 VimScript 简单封装一个函数，里面用内嵌 Python 找到 GVim 的顶层 HWND，并设置透明度。平时默认不透明，需要参考其他资料时切换成透明，参考完了又快捷键切换回来，感觉比缘来切来切去顺畅很多。
@@ -74,7 +74,7 @@ endfunc
 
 用了一段时间又发现两个问题：每次 `<c-w><c-]>` 如果有多处定义，vim会打印显示一大串定义位置，让你选择要看哪个，比较讨厌，而且开始预览时是默认上下分屏，现在都是宽屏显示器时代了，上下分屏十分影响观感。于是自己用 VimScript 重新撸了 Tag Preview：
 
-![](http://skywind3000.github.io/word/images/vim-demo-3.png)
+![](https://skywind3000.github.io/images/blog/2017/vim-demo-3.png)
 
 
 需要预览时按下 “ALT+;”，右边弹出预览窗口，并且高亮符号名称，下面显示该 tag一共有 3处定义，现在正在查看第1个定义，连续按下 "ALT+;" 可以将右边预览窗口切换到下一处定义，切换到最后一个了又会折头到第一个。
@@ -88,7 +88,7 @@ endfunc
 
 后面继续迭代，有时在函数调用时候，想不起该函数的参数了，需要查看一下原型（声明和参数），不需要打开整个预览窗口查看实现，我就又开发了一个查看函数原型的 VimScript 函数，绑定到 ALT_Q 上，同样不需要退出插入模式：
 
-![](http://skywind3000.github.io/word/images/vim-demo-4.png)
+![](https://skywind3000.github.io/images/blog/2017/vim-demo-4.png)
 
 
 按 ALT_Q 可以循环显示该函数原型的多处定义，就在最下面一行，连 Preview 窗口都不需要。有的自动补全插件可以显示函数的原型，比如 YCM，但是支持的语言很少，你换个语言，YCM就不能帮你显示原型了，这时 ALT_Q 来查看原型支持多达 85 种 Universal Ctags 支持的语言，基本满足我的需求，我平时主要用的编程语言大概有 4种，如今不管写什么但凡想不起定义来的时候，ALT_Q 一下就出来了，简洁明了。
@@ -142,7 +142,7 @@ endfunc
 
 于是结合前面的 AsyncRun 插件和一些少量的 Python + VimScript 脚本，实现了编译和运行：
 
-![](http://skywind3000.github.io/word/images/vim-demo-5.png)
+![](https://skywind3000.github.io/images/blog/2017/vim-demo-5.png)
 
 
 F9 按 Android 命令行程序编译 NDK代码或者工程，并异步调用 adb 上传到设备的 /data/local/tmp/ 下设置好 755

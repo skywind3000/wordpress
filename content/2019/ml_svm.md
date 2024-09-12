@@ -9,12 +9,12 @@ tags: 算法,AI
 
 假设你已经读懂了 SVM 的原理，并了解公式怎么推导出来的，比如到这里：
 
-![](https://skywind3000.github.io/word/images/svm1.png)
+![](https://skywind3000.github.io/images/blog/2019/svm1.png)
 
 
 SVM 的问题就变成：求解一系列满足约束的 alpha 值，使得上面那个函数可以取到最小值。然后记录下这些非零的 alpha 值和对应样本中的 x 值和 y 值，就完成学习了，然后预测的时候用：
 
-![](https://skywind3000.github.io/word/images/svm2.png)
+![](https://skywind3000.github.io/images/blog/2019/svm2.png)
 
 
 上面的公式计算出 f(x) ，如果返回值 > 0 那么是 +1 类别，否则是 -1 类别，先把这一步怎么来的，为什么这么来找篇文章读懂，不然你会做的一头雾水。
@@ -95,7 +95,7 @@ E(i) = f(xi) - yi
 
 platt 的文章建议是做一个 E 函数的缓存，方便后面选择 i, j 时比较，我看到很多入门版本 svm 实现都是这么搞得。其实这是有问题的，后面我们会说到。最好的方式是定义一个 g(x) 令其等于：
 
-![](https://skywind3000.github.io/word/images/svm3.png)
+![](https://skywind3000.github.io/images/blog/2019/svm3.png)
 
 
 也就是 f(x) 公式除了 b 以外前面那一坨最费时的计算，那么我们随时可以计算误差：

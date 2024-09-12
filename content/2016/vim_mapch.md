@@ -35,31 +35,31 @@ $ stty -a
 
 **Xshell 老版本的修改方法**
 
-![](http://skywind3000.github.io/word/images/vim_mapch_1.png)
+![](https://skywind3000.github.io/images/blog/2016/vim_mapch_1.png)
 
 Properties -> Terminal -> Keyboard 里，把`<BS>`设置成 127，而 `<DEL>`设置成 VT220 Del
 
 **SecureCRT 6 的设置方法**
 
-![](http://skywind3000.github.io/word/images/vim_mapch_2.png)
+![](https://skywind3000.github.io/images/blog/2016/vim_mapch_2.png)
 
 Session Options -> Terminal -> Emulation -> Mapped Keys, 勾选 Backspace sends delete
 
 **Putty 设置方法**
 
-![](http://skywind3000.github.io/word/images/vim_mapch_3.png)
+![](https://skywind3000.github.io/images/blog/2016/vim_mapch_3.png)
 
 好像默认是 ^? 的不过需要到：Configuration -> Terminal -> Keyboard 下面下确认下 The Backspace key 是 Control-? (127)
 
 **Terminal.app**
 
-![](http://skywind3000.github.io/word/images/vim_mapch_4.jpg)
+![](https://skywind3000.github.io/images/blog/2016/vim_mapch_4.jpg)
 
 Mac 下面的 Terminal.app 默认是发送 ^? 的，你也可以到 Profiles Advanced 下面确认下 “Delete sends Control-H” 没有勾选。
 
 **iTerm2**
 
-![](http://skywind3000.github.io/word/images/vim_mapch_5.png)
+![](https://skywind3000.github.io/images/blog/2016/vim_mapch_5.png)
 
 iTerm2 下面默认也是发送 ^? 的，可以到 Profiles -> Keys下面确认一下 “Delete key sends ^H” 没有被勾选。
 
