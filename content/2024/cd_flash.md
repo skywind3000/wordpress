@@ -17,7 +17,7 @@ date: 2024-06-25
 
 本光碟包含 Flash 全胜时期的完整开发环境，包含 Flex 各版本 SDK，AIR 运行时和 SDK，各版本播放器，相关工具，以及经典轻量级 IDE - FlashDevelop：
 
-![](https://skywind3000.github.io/images/blog/2024/flash/flash2.jpg)
+![](https://skywind3000.github.io/images/blog/2024/flash/flash2.png)
 
 虽然 Flash 官配 IDE 是 Flash Builder，但懂行的都知道，那玩意儿臃肿庞大不说，项目稍微一大点，就会卡到没法用，所以真的动手，大都会使用更加小巧流畅的 FlashDevelop。
 
@@ -37,7 +37,7 @@ date: 2024-06-25
 
 开源免费的 FlashDevelop 不仅启动快速、运行流畅，还有丰富的插件扩展：
 
-![](https://skywind3000.github.io/images/blog/2024/flash/flash3.jpg)
+![](https://skywind3000.github.io/images/blog/2024/flash/flash3.png)
 
 整个安装包也只有 26MB，使用的话请参考光盘根目录下面的《环境搭建说明》文档即可。
 
@@ -55,7 +55,7 @@ date: 2024-06-25
 
 本光盘包含下面几个版本的独立播放器，搭配 FlashDevelop 开发调试使用：
 
-![](https://skywind3000.github.io/images/blog/2024/flash/flash4.jpg)
+![](https://skywind3000.github.io/images/blog/2024/flash/flash4.png)
 
 推荐的话，就用 29 版本的就行，29 是官方最后一个没广告不会强制你更新的播放器了，后面 30-32 都在搞广告和重定向到中国版 Flash 那一套。
 
@@ -71,7 +71,7 @@ date: 2024-06-25
 
 光盘内包含了几款 FlashDevelop 的经典插件，比如 NavigationBar：
 
-![](https://skywind3000.github.io/images/blog/2024/flash/flash6.jpg)
+![](https://skywind3000.github.io/images/blog/2024/flash/flash6.png)
 
 它会在源码窗口上方增加两个下拉框，可显示当前类和方法，也可按类和方法快速跳转；另一个叫做 QuickNavigate 的插件，可以允许使用 CTRL+鼠标左键点击符号进行跳转。
 
@@ -91,7 +91,7 @@ https://www.java.com/download/manual.jsp
 
 本光碟的制作原则是 “断网可用”，那么断网的情况下进行 Flash 开发的话，没法查询在线帮助，当然需要一本离线的类库参考手册：
 
-![](https://skywind3000.github.io/images/blog/2024/flash/flash7.jpg)
+![](https://skywind3000.github.io/images/blog/2024/flash/flash7.png)
 
 Flash 的参考手册有很多，这是我找的最好的一个版本，基本把 Adobe 官网的帮助给帮运下来了，坐上方是选择包名，左下方是选择类，正上方是导航，选择导航栏的 “索引” 可以在左下角搜索框里按照关键字搜索内容：
 
