@@ -107,6 +107,6 @@ endfunc
 
 你可以把该函数绑定到 F5上，自动判断是否运行在GVIM下面，并用正确的方式执行当前代码，函数中几处外部调用用来判断文件是否需要保存，以及是否需要切换到文件当前目录的地方，你可以按需要扩充。
 
-![](https://skywind3000.github.io/images/misc/donation.png)
+![](https://skywind3000.github.io/images/t/misc/donation.png)
 
 
