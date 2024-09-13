@@ -7,13 +7,13 @@ KCP is focusing on concurrent messaging, where messages are required to deliver 
 
 ### Kcptun 
 
-![](http://skywind3000.github.io/word/images/kcp/kcptun.jpg)
+![](http://skywind3000.github.io/images/p/kcp/kcptun.jpg)
 
 [kcptun](https://github.com/xtaci/kcptun/blob/master/README.en.md) is a kcp+udp tunnel who uses KCP to speed up the transmission rate of traditional TCP applications. People far away from U.S. can use it with some proxy in their linode to watch 1080p videos from youtube, where they can only watch some 320p poor quality videos before by using TCP directly.
 
 Kcptun is a popular:
 
-![](http://skywind3000.github.io/word/images/kcp/kcptun2.jpg)
+![](http://skywind3000.github.io/images/p/kcp/kcptun2.jpg)
 
 It has more than **1 million downloads** on github, and gets **3783 stars** now. It costs lower resource but gets higher performance than final-speed.
 
@@ -25,7 +25,7 @@ https://github.com/bettermanbao/openwrt-kcptun
 
 ### Lantern
 
-![](http://skywind3000.github.io/word/images/kcp/lantern.jpg)
+![](http://skywind3000.github.io/images/p/kcp/lantern.jpg)
 
 [Lantern](https://getlantern.org/) is a free application that delivers fast, reliable and secure access to the open Internet for users in censored regions. It uses a variety of techniques to stay unblocked, including domain fronting, p2p, and pluggable transports. https://getlantern.org.
 
@@ -33,7 +33,7 @@ It has integrated [kcp-go](https://github.com/xtaci/kcp-go) to reduce network la
 
 ### RPCX
 
-![](http://skywind3000.github.io/word/images/kcp/rpcx.png)
+![](http://skywind3000.github.io/images/p/kcp/rpcx.png)
 
 [RPCX](https://github.com/smallnest/rpcx) is a distributed RPC service framework based on net/rpc like alibaba Dubbo and weibo Motan. One of best performance RPC frameworks.
 
@@ -56,7 +56,7 @@ It has integrated [kcp-go](https://github.com/xtaci/kcp-go) to reduce network la
 ## Audio Streaming
 
 ### Fantastic Westward Journey II
-![](http://skywind3000.github.io/word/images/kcp/xyq.jpg)
+![](http://skywind3000.github.io/images/p/kcp/xyq.jpg)
 
 [Fantastic Westward Journey II](http://game.163.com/en/xyq.html) is developed and published by [NetEase](http://corp.netease.com). This game is originated from a Chinese classical novel, Journey to the West, and presented with Q-style characters to build a romantic game climate.
 
@@ -67,7 +67,7 @@ I have implementated the in-game voice chat system for Fantastic Westward Journe
 
 ### Ghost Story
 
-![](http://skywind3000.github.io/word/images/kcp/ghost-story.jpg)
+![](http://skywind3000.github.io/images/p/kcp/ghost-story.jpg)
 
 After successfully using my in-game voice chat system in Fantastic Westward Journey II, 
 [Ghost Story](http://news.mmosite.com/content/2016-10-06/a_chinese_ghost_story_fantasy_mmorpg_from_netease.shtml) (another MMORPG title by NetEase) adopt it to enable their players chat online in 2013.
@@ -75,7 +75,7 @@ After successfully using my in-game voice chat system in Fantastic Westward Jour
 
 ### CC
 
-![](http://skywind3000.github.io/word/images/kcp/cc-main.jpg)
+![](http://skywind3000.github.io/images/p/kcp/cc-main.jpg)
 
 [CC](http://cc.163.com/download) is a desktop IM application for gamers. You can create or join   **voice rooms** to chat with other gamers in the same room. It gets a similar audio quality as webrtc in most of time, but can do better when network gets busy in the evening.
 
@@ -84,7 +84,7 @@ After successfully using my in-game voice chat system in Fantastic Westward Jour
 
 ### bobo.com
 
-![](http://skywind3000.github.io/word/images/kcp/bobo.jpg)
+![](http://skywind3000.github.io/images/p/kcp/bobo.jpg)
 
 [bobo.com](http://www.bobo.com) is an online entertainment live social platform. Previously anchor girls use RTMP to stream video data to the servers and get a poor quality, video always get stuck when tcp lag happens. Almost 30% audience get stuck every 5 minutes, **Stuck** means that video player switchs from **playing state** to **buffering state** because video packets can't always be delivered in time by using TCP with RTMP.
 
@@ -92,7 +92,7 @@ To improve their quality, I have implementated a KCP + Reed Solomon FEC transmis
 
 ### cc.163.com
 
-![](http://skywind3000.github.io/word/images/kcp/cc-web.jpg)
+![](http://skywind3000.github.io/images/p/kcp/cc-web.jpg)
 
 [cc.163.com](http://cc.163.com) is a Twitch like game live streaming platform. The IM application of CC provides video streaming too, but you can watch the video directly on the  cc.163.com website without download the CC client.
 
@@ -104,7 +104,7 @@ Many developer from different teams asked me how to tune KCP options to get bett
 
 Here is the one I know:
 
-![](http://skywind3000.github.io/word/images/kcp/game-1.jpg) ![](http://skywind3000.github.io/word/images/kcp/game-2.jpg)
+![](http://skywind3000.github.io/images/p/kcp/game-1.jpg) ![](http://skywind3000.github.io/images/p/kcp/game-2.jpg)
 
 ["Smash of Gods" (仙灵大作战)](http://www.pc6.com/azyx/403918.html) is a MOBA mobile game which released in Dec. 2016.
 
