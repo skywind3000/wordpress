@@ -48,7 +48,7 @@ qemu-system-i386 -kernel miniboot.elf
 
 结果：
 
-![](http://skywind3000.github.io/word/images/assets/qemu-1.jpg)
+![](https://skywind3000.github.io/images/blog/2018/qemu-1.jpg)
 
 满足条件：
 

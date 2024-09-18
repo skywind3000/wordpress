@@ -1,24 +1,20 @@
-"=========== Meta ============
-"StrID : 1924
-"Title : Aix 折腾手记
-"Slug  : 
-"Cats  : 随笔
-"Tags  : Linux
-"=============================
-"EditType   : post
-"EditFormat : Markdown
-"TextAttach : 
-"========== Content ==========
+---
+uuid: 1924
+title: Aix 折腾手记
+status: publish
+categories: 随笔
+tags: Linux
+slug: 
+---
+早年开发工作主要在 FreeBSD 进行，2006 年后来切换到 Linux下，期间穿插使用了一下 Solaris，所以我的网络库一直都是只支持这三个系统。为了让网络库支持更多平台，网上购置了一台 IBM AIX 小型机，因为其他大部分非 Linux 系统，今天基本都可以在虚拟机里面安装了，而 AIX 系统，你真的没法虚拟。
 
-早年开发工作主要在 FreeBSD进行，2006年后来切换到 Linux下，期间穿插使用了一下 Solaris，所以我的网络库一直都是只支持这三个系统。为了让网络库支持更多平台，网上购置了一台 IBM AIX 小型机，因为其他大部分非 Linux系统，今天基本都可以在虚拟机里面安装了，而 AIX系统，你真的没法虚拟。
-
-弄了几天以后，发现真他妈的麻烦，强大是强大，但是真的太琐碎了，相比之下，Linux/FreeBSD之流基本是傻瓜了。不看说明直接操作 AIX的话，可能连开机都麻烦，或者关机没关对，下次直接启动不了。
+弄了几天以后，发现真他妈的麻烦，强大是强大，但是真的太琐碎了，相比之下，Linux/FreeBSD 之流基本是傻瓜了。不看说明直接操作 AIX 的话，可能连开机都麻烦，或者关机没关对，下次直接启动不了。
 
 文字终端就没什么好拍的了，先上一张图形桌面的靓照吧：
 
-![](http://skywind3000.github.io/word/images/linux_aix_1.jpg)
+![](https://skywind3000.github.io/images/blog/2016/linux_aix_1.jpg)
 
-是的你没看错，这就是 AIX 7，2012年的操作系统，就是那么的霸道，四处透着古典 Unix的味道。这样的机器今天还跑在各大银行的机房里，AIX系统管理员也拿着比 Linux系统管理员多几倍的工资，虽然工作岗位比较稀少。
+是的你没看错，这就是 AIX 7，2012 年的操作系统，就是那么的霸道，四处透着古典 Unix 的味道。这样的机器今天还跑在各大银行的机房里，AIX 系统管理员也拿着比 Linux 系统管理员多几倍的工资，虽然工作岗位比较稀少。
 
 下面来感受一下你想正常开关机，安装软件的话要怎么弄：
 
@@ -112,5 +108,5 @@ ftp://www.oss4aix.org/latest/aix71/
 
 。。。。。
 
-玩了几天，看了N多 AIX资料，给程序增加了 AIX支持并调试正常后，觉得 IBM AIX System Administrator 认证（非 User）估计还真不是那么好考的。
+玩了几天，看了 N 多 AIX 资料，给程序增加了 AIX 支持并调试正常后，觉得 IBM AIX System Administrator 认证（非 User）估计还真不是那么好考的。
 
