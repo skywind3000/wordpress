@@ -396,3 +396,10 @@ GoldenDict 里查询 precept 单词，窗口中从上倒下分别显示了：
 
 PS：生命的价值，在于奉献
 
+
+相关内容：
+
+- [单词释义比例词典](https://skywind.me/blog/archives/2938)
+- [有道词语辨析词典](https://skywind.me/blog/archives/2941)
+- [卡片生成词典（Anki）](https://skywind.me/blog/archives/2949)
+
