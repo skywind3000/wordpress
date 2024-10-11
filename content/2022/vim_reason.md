@@ -29,7 +29,7 @@ date: 2022-08-26 17:20
 
 比如我看 html 的时候有时候很混乱，需要格式化一下，我知道有专业的格式化软件，懒得费时间找了，直接几行 vimscript 搞定：
 
-```text
+```
 function! Html_Prettify()
 	if &ft != 'html'
 		echo "not a html file"
