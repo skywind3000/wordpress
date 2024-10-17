@@ -3,7 +3,7 @@ uuid: 1958
 title: 如何优雅的使用 Vim
 status: publish
 categories: 随笔
-tags: vim
+tags: Vim
 ---
 根据 Bram 前后几个关于高效使用 Vim的视频，大家每天需要花很多时间来编辑：代码、文档、邮件、日志 等等，除去这些外，还要分时间参加会议和人沟通，每个人的时间却都是不够的，优雅使用 Vim 无外乎：
 

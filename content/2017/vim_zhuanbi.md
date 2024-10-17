@@ -1,6 +1,6 @@
 ---
 uuid: 2506
-title: 用vim被人说装逼，怎么办？
+title: 用 Vim 被人说装逼，怎么办？
 status: publish
 categories: 未分类
 tags: Vim
