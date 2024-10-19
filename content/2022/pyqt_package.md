@@ -3,7 +3,7 @@ uuid: 3002
 title: 怎么样打包 pyqt 应用才是最佳方案？
 status: publish
 categories: 编程技术
-tags: Python
+tags: Python,GUI
 slug: 
 date: 2022-02-06 13:49
 ---
@@ -214,5 +214,5 @@ main.main()
 这个 PyStand.exe 是窗口程序，那么出错了怎么看 exception 呢？可以打开一个 cmd.exe，用 cmd.exe 启动 PyStand，就能看到错误了，你自己也可以记录下日志，catch 一下内部的 exception。
 
 更多阅读：
-[为什么很多Python开发者写GUI不用Tkinter，而要选择PyQt和wxPython或其他？](https://www.zhihu.com/question/32703639/answer/2311119286)
+[为什么很多Python开发者写GUI不用Tkinter，而要选择PyQt和wxPython或其他？](/blog/archives/3039)
 
