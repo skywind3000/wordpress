@@ -38,7 +38,9 @@ include "/usr/share/nano/*.nanorc"
 
 #### Q：怎么编辑 ~/.nanorc，常用设置有哪些？
 
-常见的 nano 配置如下：
+常见的 nano 配置如下：（点击 more/continue 继续）
+
+<!--more-->
 
 ```text
 set tabsize 4       # 设置制表符宽度
