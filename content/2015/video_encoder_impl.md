@@ -2,7 +2,7 @@
 uuid: 1566
 title: 视频编码原理简介
 status: publish
-categories: 编程技术
+categories: 编程技术,图形编程
 tags: 视频
 slug: 
 ---
@@ -153,5 +153,5 @@ Encode(P2) = Lzma2(block_positions) + 有损图像编码（D2）
 
 继续阅读：
 
-[如何写一个视频编码器（演示篇）](https://www.skywind.me/blog/archives/1609)
+[如何写一个视频编码器（演示篇）](/blog/archives/1609)
 
