@@ -3,7 +3,7 @@ uuid: 2644
 title: 新版瑞士军刀：socat
 status: publish
 categories: 网络编程
-tags: 网络
+tags: 网络,命令行
 slug: 
 date: 2021-01-31 22:12
 ---

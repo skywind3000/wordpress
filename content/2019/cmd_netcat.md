@@ -3,7 +3,7 @@ uuid: 2641
 title: 用好你的瑞士军刀/netcat
 status: publish
 categories: 网络编程
-tags: 网络
+tags: 网络,命令行
 slug: 
 date: 2019-09-24 22:12
 ---
