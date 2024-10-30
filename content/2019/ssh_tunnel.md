@@ -9,14 +9,15 @@ slug:
 ---
 ssh 命令除了登陆外还有三种代理功能：
 
-正向代理（-L）：相当于 iptable 的 port forwarding
-反向代理（-R）：相当于 frp 或者 ngrok
-socks5 代理（-D）：相当于 ss/ssr
+- 正向代理（-L）：相当于 iptable 的 port forwarding
+- 反向代理（-R）：相当于 frp 或者 ngrok
+- socks5 代理（-D）：相当于 ss/ssr
+
 如要长期高效的服务，应使用对应的专用软件。如没法安装软件，比如当你处在限制环境下想要访问下某个不可达到的目标，或者某个临时需求，那么 ssh 就是你的兜底方案。
 
-##### 正向代理：
+#### 正向代理：
 
-所谓“正向代理”就是在本地启动端口，把本地端口数据转发到远端。
+所谓 “正向代理” 就是在本地启动端口，把本地端口数据转发到远端。
 
 用法1：远程端口映射到其他机器
 
@@ -40,7 +41,7 @@ HostA$ ssh -L 0.0.0.0:PortA:HostC:PortC  user@HostB
 
 两种用法的区别是，第一种用法本地到跳板机 HostB 的数据是明文的，而第二种用法一般本地就是 HostA，访问本地的 PortA，数据被 ssh 加密传输给 HostB 又转发给 HostC:PortC。
 
-##### 反向代理：
+#### 反向代理：
 
 所谓“反向代理”就是让远端启动端口，把远端端口数据转发到本地。
 
@@ -64,11 +65,11 @@ GatewayPorts yes
 
 同内网下的 HostA/HostB 也可以是同一台机器，换句话说就是**内网 HostA 把自己可以访问的端口暴露给了外网 HostC**。
 
-按照前文《[内网穿透：在公网访问你家的 NAS](https://www.skywind.me/blog/?p=2542)》中，相当于再 HostA 上启动了 frpc，而再 HostC 上启动了 frps。
+按照前文《[内网穿透：在公网访问你家的 NAS](/blog/archives/2542)》中，相当于再 HostA 上启动了 frpc，而再 HostC 上启动了 frps。
 
 
 
-##### 本地 socks5 代理
+#### 本地 socks5 代理
 
 在 HostA 的本地 1080 端口启动一个 socks5 服务，通过本地 socks5 代理的数据会通过 ssh 链接先发送给 HostB，再从 HostB 转发送给远程主机：
 
@@ -80,7 +81,7 @@ HostA$ ssh -D localhost:1080  HostB
 
 
 
-##### 使用优化
+#### 使用优化
 
 为了更好用一点，ssh 后面还可以加上：-CqTnN 参数，比如：
 
@@ -92,7 +93,7 @@ $ ssh -CqTnN -L 0.0.0.0:PortA:HostC:PortC  user@HostB
 
 这些 ssh 代理没有短线重连功能，链接断了命令就退出了，所以需要些脚本监控重启，或者使用 autossh 之类的工具保持链接。
 
-##### 功能对比
+#### 功能对比
 
 正向代理（-L）的第一种用法可以用 iptable 的 port-forwarding 模拟，iptable 性能更好，但是需要 root 权限，ssh -L 性能不好，但是正向代理花样更多些。反向代理（-R）一般就作为没有安装 frp/ngrok/shootback 时候的一种代替，但是数据传输的性能和稳定性当然 frp 这些专用软件更好。
 
