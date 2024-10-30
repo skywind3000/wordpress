@@ -72,5 +72,5 @@ end
 
 扩展阅读：还有觉得从 1 开始更合理的点这里
 
-[为什么 C 语言数组是从 0 开始计数的](https://skywind.me/blog/archives/2917)
+[为什么 C 语言数组是从 0 开始计数的？](https://skywind.me/blog/archives/2917)
 
