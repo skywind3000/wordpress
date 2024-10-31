@@ -126,7 +126,7 @@ int my_select1(const int *fds, const int *event, int *revent, int count, long mi
 ```cpp
 int my_select2(const int *fds, const int *event, int *revent, int count, long millisec) {
     #define MAX_BUFFER_SIZE 2048
-    char *stack[MAX_BUFFER_SIZE];
+    char stack[MAX_BUFFER_SIZE];
     char *buffer = stack;
     int require = iselect(NULL, NULL, NULL, count, 0, NULL);
     if (require > MAX_BUFFER_SIZE) buffer = (char*)malloc(require);
@@ -320,7 +320,7 @@ int epoll_wait(HANDLE ephnd,
                int timeout);
 ```
 
-完全跟 epoll 一样用就完事了，不过只支持 Level-triggered 不支持 Edge-triggered，不过有性能测试表明 Edge-triggered 并没有太大优势，且并不跨平台，kevent, pollset, devpoll 这些都这个模式，所以用 Level-triggered 问题不大。
+完全跟 epoll 一样用就完事了，不过只支持 Level-triggered 不支持 Edge-triggered，不过有性能测试表明 Edge-triggered 并没有太大优势，且并不跨平台，其它平台的异步事件 API 大多也不兼容这个模式，所以用 Level-triggered 问题不大。
 
 
 #### 话题总结
