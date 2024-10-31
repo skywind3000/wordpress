@@ -1,6 +1,6 @@
 ---
 uuid: 2917
-title: 为什么 C 语言数组是从 0 开始计数的
+title: 为什么 C 语言数组是从 0 开始计数的？
 status: publish
 categories: 编程技术
 tags: 计算机系统
