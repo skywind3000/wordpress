@@ -2,8 +2,8 @@
 uuid: 2602
 title: 我在命令行下学日语
 status: publish
-categories: 大浪淘沙
-tags: 随笔
+categories: 随笔
+tags: 命令行
 slug: 
 date: 2021-12-24 02:04
 ---
