@@ -164,7 +164,10 @@ print(parser('1+2*3+(5-2)*2'))
 
 词法部分也可以自己定义非规则 Lexer，传一个 Token 的 list 或者 generator （可以 for 和 next 的那种 python 对象）到 parser 第一个参数即可。
 
-基本上实现了 Yacc 的主要功能，
+基本上实现了 Yacc 的主要功能，欢迎尝试。
 
-欢迎尝试。
+更多阅读：
+
+- [使用 LIBLR 解析带注释的 JSON](/blog/archives/2677)
+- [56 行代码用 Python 实现一个 Flex/Lex](/blog/archives/2761)
 

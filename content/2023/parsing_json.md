@@ -161,3 +161,11 @@ pprint.pprint(parser(text))
 
 文法 + 源代码一共写了 100 行，完事，感觉比 Yacc/Bison 写起来顺畅不少。
 
+相关阅读：
+
+- [基于 LR(1) 和 LALR 的 Parser Generator](/blog/archives/2671)
+- [56 行代码用 Python 实现一个 Flex/Lex](/blog/archives/2761)
+
+
+
+--
