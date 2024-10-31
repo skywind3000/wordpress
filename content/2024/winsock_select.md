@@ -320,7 +320,7 @@ int epoll_wait(HANDLE ephnd,
                int timeout);
 ```
 
-完全跟 epoll 一样用就完事了，不过只支持 level trigger 不支持 edge trigger，不过有性能测试表明 edge trigger 并没有太大优势，且 edge trigger 模式并不跨平台，kevent, pollset, devpoll 这些都没有 edge trigger 模式，所以用 level trigger 问题不大。
+完全跟 epoll 一样用就完事了，不过只支持 Level-triggere 不支持 Edge-triggered，不过有性能测试表明 Edge-triggered 并没有太大优势，且并不跨平台，kevent, pollset, devpoll 这些都这个模式，所以用 Level-triggered 问题不大。
 
 
 #### 话题总结
