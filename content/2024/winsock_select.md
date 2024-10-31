@@ -16,7 +16,7 @@ slug:
 
 #### 方法1：重定义 FD_SETSIZE
 
-可以看 MSDN 中 winsock2 的 [select](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-select) 帮助，这个 `FD_SETSIZE` 是可以自定义的：
+首先可以看 MSDN 中 winsock2 的 [select](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-select) 帮助，这个 `FD_SETSIZE` 是可以自定义的：
 
 > Four macros are defined in the header file Winsock2.h for manipulating and checking the descriptor sets. The variable FD_SETSIZE determines the maximum number of descriptors in a set. (The default value of FD_SETSIZE is 64, which can be modified by defining FD_SETSIZE to another value before including Winsock2.h.) 
 
