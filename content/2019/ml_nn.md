@@ -3,7 +3,7 @@ uuid: 3130
 title: 如何实现传统神经网络
 status: publish
 categories: 人工智能
-tags: 机器学习
+tags: 算法,机器学习,AI
 slug: 
 date: 2019-03-26 23:15
 ---

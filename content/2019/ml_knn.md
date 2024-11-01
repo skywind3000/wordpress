@@ -3,7 +3,7 @@ uuid: 2308
 title: kNN 的花式用法
 status: publish
 Categories: 人工智能
-tags: 算法,AI
+tags: 算法,机器学习,AI
 ---
 **kNN** （**k-nearest neighbors**）作为一个入门级模型，因为既简单又可靠，对非线性问题支持良好，虽然需要保存所有样本，但是仍然活跃在各个领域中，并提供比较稳健的识别结果。
 

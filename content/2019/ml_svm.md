@@ -3,7 +3,7 @@ uuid: 2250
 title: 如何实现和优化 SVM（支持向量机）？
 status: publish
 Categories: 人工智能
-tags: 算法,AI
+tags: 算法,机器学习,AI
 ---
 学习 SVM 的最好方法是实现一个 SVM，可讲理论的很多，讲实现的太少了。
 
