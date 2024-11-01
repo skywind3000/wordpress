@@ -31,9 +31,36 @@ slug:
 所以看似是 `UINT_PTR` 指针的 `SOCKET` 类型，其实也只是一个表格索引而已，这个 Handle Table 表格的项目有数量限的（最多 2^24 个元素），内容又是连续的，那当然可以用 `int` 来保存。
 
 
+#### 开源案例
+
+故此不少开源项目也会选择在 Windows 环境下将 `SOCKET` 类型直接用 `int` 来存储，比如著名的 openssl 在 [include/internal/sockets.h](https://github.com/openssl/openssl/blob/59f5f6c73cd2e1e2bd8ef405fdb6fadf0711f639/include/internal/sockets.h#L53-L62) 里有解释：
+
+```cpp
+/*
+ * Even though sizeof(SOCKET) is 8, it's safe to cast it to int, because
+ * the value constitutes an index in per-process table of limited size
+ * and not a real pointer. And we also depend on fact that all processors
+ * Windows run on happen to be two's-complement, which allows to
+ * interchange INVALID_SOCKET and -1.
+ */
+#   define socket(d,t,p)   ((int)socket(d,t,p))
+#   define accept(s,f,l)   ((int)accept(s,f,l))
+```
+
+所以 openssl 不论什么平台，都将套接字看作 `int` 来使用：
+
+```cpp
+int SSL_set_fd(SSL *ssl, int fd);
+int SSL_set_rfd(SSL *ssl, int fd);
+int SSL_set_wfd(SSL *ssl, int fd);
+```
+
+所以它的这些 API 设计，清一色的 `int` 类型。
+
+
 #### 程序验证
 
-写个程序测试一下：
+道理前面都讲完了，下面写个程序验证一下：
 
 <!--more-->
 
@@ -97,26 +124,6 @@ index=9 socket=324
 
 可以看出，即便在 64 位下面：1）`SOCKET` 指向的表格项目是连续的；2）前面释放掉的表格项目，是会被后面复用的；3）他们都在表格范围内，不会由于不停创建/销毁导致 `SOCKET` 的数值持续增长。
 
-这个程序印证了前面关于 Kernel Object 和 Handle Table 的解释。
+成功的印证了前面关于 Kernel Object 和 Handle Table 的解释。
 
-#### 开源例子
-
-故此不少开源项目也会选择在 Windows 环境下将 `SOCKET` 类型直接用 `int` 来存储，比如著名的 openssl 在 `include/internal/sockets.h` 里有解释：
-
-```cpp
-/*
- * Even though sizeof(SOCKET) is 8, it's safe to cast it to int, because
- * the value constitutes an index in per-process table of limited size
- * and not a real pointer. And we also depend on fact that all processors
- * Windows run on happen to be two's-complement, which allows to
- * interchange INVALID_SOCKET and -1.
- */
-```
-
-所以它在 Windows 下一直把 SOCKET 转成 int 使用的。
-
-
-#### 话题总结
-
-Windows 网络编程，有很多知识点光直接看表面上的文档，是很难发现的，关于 `SOCKET` 类型可以安全同 `int` 互转这件事情我们解释了理论，跑了验证程序，最后还给出了开源项目参考，所以如果能简化你的程序结构，该转就转。
 
