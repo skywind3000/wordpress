@@ -127,3 +127,17 @@ index=9 socket=324
 成功的印证了前面关于 Kernel Object 和 Handle Table 的解释。
 
 
+--
+补充：刚才我又写了个程序，不停创建 socket ，看能创建多少个，以及 socket 的值最高去到多少：
+
+![](https://skywind3000.github.io/images/blog/2024/win32/maxsock.png)
+
+最终结果（64 位程序，台式机内存 96GB）：
+
+- 总共可以创建 1611629 个，刚好是 0xfeffcd 差不多就是 2^24 那么多。
+- SOCKET 的值去到 67108860 = 0x3fffffc，差不多是 2^26 的大小。
+- 当创建到 1611629 个以后，发生 10055 错误退出。
+
+差不多就这样。
+
+
