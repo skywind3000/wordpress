@@ -179,6 +179,6 @@ K(xi, xj) = xi . xj
 相关阅读：
 
 - [kNN 的花式用法（七种不同用法）](/blog/archives/2308)
-- [如何实现传统神经网络](/blog/archives/3130)
+- [如何实现传统神经网络？](/blog/archives/3130)
 
 
