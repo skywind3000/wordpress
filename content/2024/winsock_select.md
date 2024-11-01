@@ -322,6 +322,8 @@ int epoll_wait(HANDLE ephnd,
 
 完全跟 epoll 一样用就完事了，不过只支持 Level-triggered 不支持 Edge-triggered，不过有性能测试表明 Edge-triggered 并没有太大优势，且并不跨平台，其它平台的异步事件 API 大多也不兼容这个模式，所以用 Level-triggered 问题不大。
 
+PS：libevent 新版本在 Windows 下就是用的这个 wepoll，应该是经过考验的项目了。
+
 
 #### 话题总结
 
