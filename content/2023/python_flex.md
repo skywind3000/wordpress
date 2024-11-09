@@ -317,7 +317,7 @@ for token in tokenize(code, rules, None):
 ('}', '}', 10, 1)
 ```
 
-输出符合预期，你如果觉得编写那些 PATTERN_ 开头的正则规则比较困难，可以使用《[组合方式构建复杂正则](https://www.skywind.me/blog/archives/2757)》的文章里的方法，三两下也就定义出来了。
+输出符合预期，你如果觉得编写那些 PATTERN_ 开头的正则规则比较困难，可以使用《[组合方式构建复杂正则](/blog/archives/2757)》的文章里的方法，三两下也就定义出来了。
 
 你如果代码里有一些简单的词法分析需求，把上面这个 56 行的函数拷贝过去就够了，真的不必引入什么其他的复杂依赖。
 
@@ -330,8 +330,8 @@ for token in tokenize(code, rules, None):
 
 更多阅读：
 
-- [LIBLR - 使用 Python 实现基于 LR(1) 和 LALR 的 Parser Generator](https://www.skywind.me/blog/archives/2671)
-- [使用 LIBLR 解析带注释的 JSON](https://www.skywind.me/blog/archives/2677)
+- [LIBLR - 使用 Python 实现基于 LR(1) 和 LALR 的 Parser Generator](/blog/archives/2671)
+- [使用 LIBLR 解析带注释的 JSON](/blog/archives/2677)
 
 
 <br>
