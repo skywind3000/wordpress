@@ -83,3 +83,5 @@ while (is_running) {
 
 差不多就是这样。
 
+PS：有人说用 eventfd 也能实现类似效果，没错，但不能跨平台，只有 Linux 特有，而且还有一些坑，但 self-pipe trick 是跨平台的通用解决方案，不管你用 Windows / FreeBSD / Linux / Solaris 都可以使用这个功能。
+
