@@ -1,6 +1,6 @@
 ---
 uuid: 3191
-title: 为何吸烟
+title: 我为何会吸烟？
 status: publish
 categories: 随笔
 tags: 闲聊
