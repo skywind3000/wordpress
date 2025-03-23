@@ -152,7 +152,7 @@ int iselect(const int *fds, const int *events, int *revents, int count,
         #if defined(__unix) || defined(__linux)
         return count * sizeof(struct pollfd);
         #else
-        size_t unit = (size_t)(&(((FD_SET*)0)->fd_array[1]));
+        size_t unit = 32;
         size_t size = count * sizeof(SOCKET) + unit + 8;
         return (int)(size * 3);
         #endif
@@ -188,7 +188,7 @@ int iselect(const int *fds, const int *events, int *revents, int count,
 
         #else
         struct timeval tmx = { 0, 0 };
-        size_t unit = (size_t)(&(((FD_SET*)0)->fd_array[1]));
+        size_t unit = 32;
         size_t size = count * sizeof(SOCKET) + unit + 8;
         FD_SET *fdr = (FD_SET*)(((char*)workmem) + 0);
         FD_SET *fdw = (FD_SET*)(((char*)workmem) + size);
