@@ -5,6 +5,7 @@ status: publish
 categories: 随笔
 tags: Linux
 slug: 
+date: 2016-12-08 01:51:09
 ---
 早年开发工作主要在 FreeBSD 进行，2006 年后来切换到 Linux下，期间穿插使用了一下 Solaris，所以我的网络库一直都是只支持这三个系统。为了让网络库支持更多平台，网上购置了一台 IBM AIX 小型机，因为其他大部分非 Linux 系统，今天基本都可以在虚拟机里面安装了，而 AIX 系统，你真的没法虚拟。
 

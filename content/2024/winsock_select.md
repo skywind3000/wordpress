@@ -5,6 +5,7 @@ status: publish
 categories: 网络编程
 tags: 网络
 slug: 
+date: 2024-10-31 23:31
 ---
 在做跨平台网络编程时，Windows 下面能够对应 epoll/kevent 这类 reactor 事件模型的 API 只有一个 select，但是却有数量限制，一次传入 select 的 socket 数量不能超过 `FD_SETSIZE` 个，而这个值是 64。
 

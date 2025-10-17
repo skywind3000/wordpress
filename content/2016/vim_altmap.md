@@ -4,6 +4,7 @@ title: Vim 中正确使用 Alt映射
 status: publish
 categories: 随笔
 tags: Vim
+date: 2016-11-19 21:23:55
 ---
 最简单的做法是：首先将终端软件的 “使用 Alt键作为 Meta键” 的功能打开，其次将 Alt的模式改为 **ESC+字母**，意思是如果你在终端下按下 ALT+X，那么终端软件将会发送 `<ESC>x` 两个字节过去，字节码为：0x27, 0x78。如果你使用过 NeoVim 或者 Emacs的话，这一步应该早就做过了。
 

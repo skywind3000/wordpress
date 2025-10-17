@@ -5,6 +5,7 @@ status: publish
 categories: 编程技术
 tags: Python
 slug: 
+date: 2022-12-13 18:46
 ---
 测试一下 python 的 asyncio 和 gevent 的性能，再和同等 C 程序对比一下，先安装依赖：
 

@@ -1,14 +1,11 @@
-"=========== Meta ============
-"StrID : 2071
-"Title : Bash 中文速查表/Cheatsheet （全网最全）
-"Slug  : 
-"Cats  : 随笔
-"Tags  : Linux
-"=============================
-"EditType   : post
-"EditFormat : Markdown
-"TextAttach : 
-"========== Content ==========
+---
+uuid: 2071
+title: Bash 中文速查表/Cheatsheet （全网最全）
+status: publish
+categories: 随笔
+tags: Linux
+date: 2018-03-07 11:59:26
+---
 Bash 的知识点向来比较凌乱，有时候写点小脚本，你忘记了条件判断怎么写了，就打开网页搜索一半天；忘记怎么分割字符串，又搜索一半天；忘了怎么解压缩某后缀名，又打开网页搜一半天。
 
 关键大部分搜出来的东西都十分琐碎，东一处，西一处，质量又参差不齐，而且看到一处有些细节有疑问，你还得接着搜索。

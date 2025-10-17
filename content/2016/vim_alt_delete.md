@@ -4,6 +4,7 @@ title: 终端里正确设置 ALT 键和 BS 键
 status: publish
 categories: 随笔
 tags: Vim
+date: 2018-02-23 15:42:59
 ---
 不管你在终端下使用 vim/neovim, emacs, nano 或者 zsh，你都会碰到使用 ALT 键的情况（终端下叫做 meta键），而由于历史原因，大部分终端软件的默认设置都无法正确使用 ALT 键。
 

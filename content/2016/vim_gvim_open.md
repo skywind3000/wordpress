@@ -4,6 +4,7 @@ title: GVim 中更好的运行程序
 status: publish
 categories: 随笔
 tags: Vim
+date: 2016-05-09 16:24:10
 ---
 GVim（Windows）下面使用!运行程序是非常恶心的事情，比如调用python运行当前脚本：
 

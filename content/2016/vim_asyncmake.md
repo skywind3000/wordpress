@@ -4,6 +4,7 @@ title: Vim 异步编译插件 vimmake
 status: publish
 categories: 随笔
 tags: vim
+date: 2016-07-16 20:48:08
 ---
 推荐下自己写的用了好几年的编程插件：vimmake ？完美支持 vim的异步模式：
 [GitHub - skywind3000/vimmake: Customize shell commands in vim](https://github.com/skywind3000/vimmake)

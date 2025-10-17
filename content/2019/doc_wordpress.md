@@ -5,6 +5,7 @@ status: publish
 categories: 随笔
 tags: Vim
 slug: 
+date: 2019-05-13 16:47
 ---
 
 试用过一段时间各种静态页面博客系统，Hugo 这些，虽然发展的不错，但是比起 WordPress 来还是太弱了。WordPress 毕竟是发展了 15 年的东西各种功能和插件都比较完善。

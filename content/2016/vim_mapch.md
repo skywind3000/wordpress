@@ -4,6 +4,7 @@ title: Vim 里如何映射 CTRL-h 为 left ?
 status: publish
 categories: 随笔
 tags: vim
+date: 2016-11-28 03:14:45
 ---
 很多人习惯在配置文件中映射 CTRL+HJKL 为光标移动，却碰到了一些问题：
 

@@ -5,6 +5,7 @@ status: publish
 categories: 网络编程
 tags: 网络
 slug: 
+date: 2024-11-04 11:41
 ---
 异步事件模型中有一个重要问题是，当你的 select/poll 循环陷入等待时，没有办法被另外一个线程被唤醒，这导致了一系列问题：
 

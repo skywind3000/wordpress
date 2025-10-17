@@ -5,6 +5,7 @@ status: publish
 categories: 大浪淘沙
 tags: 创业,管理
 slug: 
+date: 2017-06-05 13:16
 ---
 这是之前我写的一篇知乎[回答](https://www.zhihu.com/question/60198263/answer/177259358)，先后获得知乎圆桌精选，日报收录和编辑推荐，起因是有人再问：
 

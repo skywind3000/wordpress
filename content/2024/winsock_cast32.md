@@ -5,6 +5,7 @@ status: publish
 categories: 网络编程
 tags: 网络,Win32
 slug: 
+date: 2024-11-01 17:04
 ---
 在 Linux/Unix 等 posix 环境中，每个套接字都是一个文件描述符 `fd`，类型是 `int`，使用起来非常方便；但在 Win32 环境中是 `SOCKET` 类型被定义成  `UINT_PTR` ，是一个指针，在 x64 环境中一个 `SOCKET` 占用 8 个字节。
 

@@ -4,6 +4,7 @@ title: 别让 cd 浪费你的时间
 status: publish
 categories: 随笔
 tags: 命令行
+date: 2019-02-27 23:37
 ---
 终端下工作最烦躁的就是路径切换，没有自动路径切换的帮助，就像在泥里走路，于是有了各种 autojump / z / fasd 等工具来提升路径切换的效率，今天向大家介绍一个更好用的工具：[z.lua](https://github.com/skywind3000/z.lua)，用熟练了以后就像终端里溜冰，路劲切换从此指哪打哪。
 

@@ -4,6 +4,7 @@ title: 为什么说 zsh 是 shell 中的极品？
 status: publish
 categories: 未分类
 tags: 命令行
+date: 2018-01-22 00:29
 ---
 （这是之前我在知乎上回答的一个可能对大家有点用处的答案，关于 zsh 的一些演示）
 
