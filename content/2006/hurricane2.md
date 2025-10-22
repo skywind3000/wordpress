@@ -2,7 +2,7 @@
 uuid: 613
 title: 推荐业余作品 – Hurricane2
 status: publish
-Categories: 游戏开发
+categories: 游戏开发
 tags: 演示
 date: 2006-06-07 15:27
 ---

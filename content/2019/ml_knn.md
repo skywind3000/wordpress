@@ -2,7 +2,7 @@
 uuid: 2308
 title: kNN 的花式用法
 status: publish
-Categories: 人工智能
+categories: 人工智能
 tags: 算法,机器学习,AI
 date: 2019-04-15 13:29
 ---

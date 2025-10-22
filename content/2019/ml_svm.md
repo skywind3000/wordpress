@@ -2,7 +2,7 @@
 uuid: 2250
 title: 如何实现和优化 SVM（支持向量机）？
 status: publish
-Categories: 人工智能
+categories: 人工智能
 tags: 算法,机器学习,AI
 date: 2019-04-03 20:29
 ---
@@ -12,11 +12,9 @@ date: 2019-04-03 20:29
 
 ![](https://skywind3000.github.io/images/blog/2019/svm1.png)
 
-
 SVM 的问题就变成：求解一系列满足约束的 alpha 值，使得上面那个函数可以取到最小值。然后记录下这些非零的 alpha 值和对应样本中的 x 值和 y 值，就完成学习了，然后预测的时候用：
 
 ![](https://skywind3000.github.io/images/blog/2019/svm2.png)
-
 
 上面的公式计算出 f(x) ，如果返回值 > 0 那么是 +1 类别，否则是 -1 类别，先把这一步怎么来的，为什么这么来找篇文章读懂，不然你会做的一头雾水。
 

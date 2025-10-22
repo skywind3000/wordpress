@@ -2,7 +2,7 @@
 uuid: 1498
 title: 如何写一个软件渲染器？
 status: publish
-Categories: 图形编程, 编程技术
+categories: 图形编程, 编程技术
 tags: 图形
 date: 2015-08-10 02:52
 ---

@@ -2,7 +2,7 @@
 uuid: 1774
 title: 计算机底层是如何访问显卡的？
 status: publish
-Categories: 图形编程
+categories: 图形编程
 tags: 图形,汇编
 date: 2016-06-17 18:20:18
 ---

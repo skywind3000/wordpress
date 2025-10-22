@@ -2,7 +2,7 @@
 uuid: 2036
 title: GDB 从裸奔到穿戴整齐
 status: publish
-Categories: 随笔
+categories: 随笔
 tags: Linux
 date: 2018-01-11 19:05
 ---
