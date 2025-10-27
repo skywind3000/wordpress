@@ -8,7 +8,7 @@ date: 2006-06-07 15:27
 ---
 给大家介绍这款充满速度感，爽快感，连续性强的动作游戏。游戏里主角需要杀死各类敌人，获得高分，除使用不同招数和连续技外，还能利用各种致命武器，屠杀敌人：
 
-![](http://skywind.me/blog/wp-content/uploads/2011/04/clip_image0025.jpg)
+![](https://skywind3000.github.io/images/blog/wp-content/2011/04/clip_image0025.jpg)
 
 基本操作：
 
