@@ -21,7 +21,17 @@ Rust 并不适合开发游戏，它更擅长有明确定义，边界清晰的项
 
 那么 Rust 适合开发游戏引擎么？我只能说 depends，主要到了现在也没啥 rust 开发游戏引擎的成功例子啊，一天到晚到处搞营销的 rust 游戏引擎 bevy 基本上类似个玩具，到现在都没啥靠谱的商业游戏案例，顶多几个独立小游戏之类，而且它要求用 rust 来写业务逻辑，这个上面已经论述过，它并不适合开发游戏业务逻辑；
 
+<!--more-->
+
 其次游戏引擎有很多部件，有需要高度优化各种汇编技巧的性能部分（类似 ffmpeg），有需要同各种系统图形 api 打交道的抽象硬件层部分（不断同 direct3d，opengl，vulkan 还有各种系统 api 打交道），还有需要大量整合第三方（基本是 c++ 库，比如 imgui, box2d, sdl, bgfx, physx）的胶水层，这些也并不适合 rust。除非你觉得 ffmpeg 这样的项目适合用 rust 重写，或者可以用 rust 把大量久经考验的第三方库全部发明一遍。
 
 最后，成熟的游戏引擎里都是有各种 hack 或者 dirty trick 的，rust 做这些并不是特别方便。
+
+配图1：“因为你还不够熟悉 Rust !!”
+
+![“因为你还不够熟悉 Rust !!”](https://skywind3000.github.io/images/blog/2025/rust_error.jpg)
+
+配图2：“But it's SAFE !!”
+
+![“But it's SAFE !!”](https://skywind3000.github.io/images/blog/2025/rust_safe.jpg)
 
