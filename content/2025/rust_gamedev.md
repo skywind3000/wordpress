@@ -27,11 +27,7 @@ Rust 并不适合开发游戏，它更擅长有明确定义，边界清晰的项
 
 最后，成熟的游戏引擎里都是有各种 hack 或者 dirty trick 的，rust 做这些并不是特别方便。
 
-配图1：“因为你还不够熟悉 Rust !!”
-
-![“因为你还不够熟悉 Rust !!”](https://skywind3000.github.io/images/blog/2025/rust_error.jpg)
-
-配图2：“But it's SAFE !!”
+配图：“But it's SAFE !!”
 
 ![“But it's SAFE !!”](https://skywind3000.github.io/images/blog/2025/rust_safe.jpg)
 
