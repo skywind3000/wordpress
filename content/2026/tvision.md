@@ -130,8 +130,13 @@ Linux 下面基于 ncurses 二次封装的库也很多，但大多是个人项�
 
 我很喜欢它的设置界面，根本不用读文档写配置文件，直接对话框里全部帮你归好类了：
 
-![](https://skywind3000.github.io/images/blog/2026/tvision/tv2_free.png)
-
+c
 是不是很眼熟？Free Pascal 的 IDE，背后使用的 Free Vision，和上面的 Turbo Vision 同出一源。
 
+
+PS：Turbo Vision 还出过几本书：
+
+![](https://skywind3000.github.io/images/blog/2026/tvision/tvision1.jpg)
+
+想看的话到开头项目主页里有链接。
 
