@@ -121,3 +121,4 @@ venv.bak/
 /nul
 /.vscode/*
 
+/**/*.py
