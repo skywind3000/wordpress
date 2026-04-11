@@ -110,3 +110,14 @@ venv.bak/
 /.vscode/*
 /content/**/*.html
 /legacy/**/*.html
+
+
+/.qoder/*
+/.claude/*
+/.opencode/*
+/.env
+.env.local
+/scratch/*
+/nul
+/.vscode/*
+
