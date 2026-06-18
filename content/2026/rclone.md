@@ -89,7 +89,8 @@ $RCLONE_BIN bisync "$RCLONE_LOCAL" "$RCLONE_REMOTE" \
         --compare size,modtime \
         --resilient \
         --recover \
-        --max-lock 2m \
+        --max-lock 20m \
+        --force \
         --verbose \
         --log-file="$LOGFILE"
 ```
@@ -104,6 +105,8 @@ $RCLONE_BIN bisync "$RCLONE_LOCAL" "$RCLONE_REMOTE" \
 
 即可，调试完正常可以把启动脚本里的 `--verbose` 去掉，没错误就不写日志了。你可以在多个客户端上进行类似的配置，不管 Windows 还是 Linux，要点就是先 config 上远端 sftp，然后初始化 `--resync`，然后就是定时调用 `bisync` 子命令就行。
 
+其中参数 `--force` 的意思是去掉一些过于严格的保护，比如默认 bisync 发现本次删除的文件超过 30% 就会拒绝同步，加上 `--force` 让它少管闲事，而 `--max-lock 20m` 意思是最长锁过期时间 20 分钟，为了避免 crontab 调度 rclone bisync 一次还没完成又执行一次，所以 rclone 增加了这个锁机制，避免重复运行，但如果同步时进程挂了，避免锁无法清除增加了这个超时，20分钟用来覆盖单次最长同步时间，比如我放了几个大文件上去。
+
 然后你就得到了一个干净纯粹的，开源的，多端同步网盘了。
 
 
@@ -114,5 +117,4 @@ $RCLONE_BIN bisync "$RCLONE_LOCAL" "$RCLONE_REMOTE" \
 所以 rclone 做网盘体验最好的目前就是 bisync 功能了，bisync 的 bisync 可以用很多源，作为服务端，如果你不想搭建一大套 webserver / fileserver 来做源的话，最好就是用 rclone 自己可以 serve 的服务，包括：http，sftp，webdav，nfs 等等。
 
 我试过 webdav 等，发现如果想要加密，前面还得再套一层 https 代理，或者又搞一大堆证书什么的，异常麻烦，所以体验最好，速度最快的是 sftp 服务。
-
 
