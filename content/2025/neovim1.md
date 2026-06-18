@@ -10,7 +10,7 @@ date: 2025-01-25 23:48
 
 ![](https://skywind3000.github.io/images/blog/2025/neovim1.png)
 
-以及：
+如图：Neovim 在 Windows 下面根本无法区分正斜杠反斜杠，以及不同大小写，同样的文件被当成多份不同的内容，导致历史搜索全废，比如你想查看下 `v:oldfiles` 结果：
 
 ![](https://skywind3000.github.io/images/blog/2025/neovim2.png)
 
